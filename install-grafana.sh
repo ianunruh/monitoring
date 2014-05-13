@@ -4,6 +4,7 @@ BASE_PATH=`pwd`
 curl -O -L http://grafanarel.s3.amazonaws.com/grafana-1.5.3.tar.gz
 tar xf grafana-1.5.3.tar.gz
 cp -R grafana-1.5.3 /usr/share/grafana
+rm -rf grafana-1.5.3*
 
 apt-get install -y apache2
 
