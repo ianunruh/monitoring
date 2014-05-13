@@ -1,6 +1,7 @@
 #!/bin/bash
 BASE_PATH=`pwd`
 
+$BASE_PATH/clean.sh
 $BASE_PATH/generate-sensu-ssl.sh
 
 $BASE_PATH/install-elasticsearch.sh
