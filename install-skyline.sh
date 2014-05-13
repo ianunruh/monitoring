@@ -3,8 +3,8 @@ BASE_PATH=`pwd`
 
 useradd -b /opt skyline
 
-mkdir -p /var/log/skyline /var/run/skyline
-chown skyline:skyline /var/log/skyline /var/run/skyline
+mkdir -p /var/log/skyline
+chown skyline:skyline /var/log/skyline
 
 apt-get install -y python-pip python-numpy python-scipy git
 
