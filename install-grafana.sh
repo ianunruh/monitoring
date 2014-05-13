@@ -1,10 +1,12 @@
 #!/bin/bash
 BASE_PATH=`pwd`
+TMP_PATH=$BASE_PATH/tmp
+
+mkdir -p $TMP_PATH && cd $TMP_PATH
 
 curl -O -L http://grafanarel.s3.amazonaws.com/grafana-1.5.3.tar.gz
 tar xf grafana-1.5.3.tar.gz
 cp -R grafana-1.5.3 /usr/share/grafana
-rm -rf grafana-1.5.3*
 
 cp $BASE_PATH/usr/share/grafana/config.js /usr/share/grafana
 
