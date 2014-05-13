@@ -1,24 +1,2 @@
 {
-  "rabbitmq": {
-    "host": "localhost",
-    "port": 5671,
-    "vhost": "/sensu",
-    "user": "sensu",
-    "password": "monit0r"
-  },
-  "redis": {
-    "host": "localhost",
-    "port": 6379
-  },
-  "api": {
-    "host": "localhost",
-    "port": 4567,
-    "user": "admin",
-    "password": "secret"
-  },
-  "dashboard": {
-    "port": 8080,
-    "user": "admin",
-    "password": "secret"
-  }
 }
