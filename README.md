@@ -40,3 +40,19 @@ cd monitoring
 
 ./install-all-client.sh
 ```
+
+To start feeding metrics into the Sensu/Graphite/Kale pipeline immediately, use the following on the server.
+
+```sh
+cat <<EOF > /etc/sensu/conf.d/client.json
+{
+  "client": {
+    "name": "YOUR_HOSTNAME",
+    "address": "YOUR_PRIMARY_IP",
+    "subscriptions": ["all"]
+  }
+}
+EOF
+
+./install-sensu-common-metrics.sh
+```

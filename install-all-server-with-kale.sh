@@ -27,4 +27,5 @@ $BASE_PATH/install-logstash.sh
 $BASE_PATH/install-kibana.sh
 
 $BASE_PATH/install-skyline.sh
+$BASE_PATH/install-skyline-carbon-relay.sh
 $BASE_PATH/install-oculus.sh
