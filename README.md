@@ -17,7 +17,7 @@ For a small infrastructure (~dozen nodes), you need about 2GB memory and 2 cores
 
 ## Usage
 
-These scripts have been tested extensively on Ubuntu Server 14.04.
+Use the following to install the entire monitoring stack on a single server.
 
 ```sh
 apt-get install -y git
@@ -30,7 +30,7 @@ cd monitoring
 ./install-all-server-with-kale.sh
 ```
 
-There is a script for installing Sensu and Logstash on your clients too.
+On your clients, you can use the following to install Logstash and Sensu clients.
 
 ```sh
 apt-get install -y git
