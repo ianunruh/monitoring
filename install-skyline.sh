@@ -11,7 +11,7 @@ apt-get install -y python-pip python-numpy python-scipy git redis-server
 pip install pandas
 pip install patsy
 pip install statsmodels
-pip install msgpack_pythont
+pip install msgpack_python
 
 git clone git://github.com/etsy/skyline.git /opt/skyline
 cd /opt/skyline
