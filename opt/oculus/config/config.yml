@@ -1,0 +1,24 @@
+results_explain: 0
+
+elasticsearch:
+  servers:
+     - "http://localhost:9200"
+  index: "metrics"
+  timeout: 30
+  phrase_slop: 20
+  scorers:
+    dtw:
+      radius: 5
+      scale_points: 25
+    euclidian:
+      scale_points: 25
+
+skyline:
+  host: "localhost"
+  port: 6379
+  listener_port: 2025
+  metric_prefix: "mini"
+
+redis:
+  host: "localhost"
+  port: 6379
