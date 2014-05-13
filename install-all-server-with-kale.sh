@@ -14,7 +14,7 @@ $BASE_PATH/install-graphite-carbon.sh
 $BASE_PATH/install-graphite-web.sh
 $BASE_PATH/install-grafana.sh
 
-$BASE_PATH/configure-sensu-rabbitmq.sh
+$BASE_PATH/configure-rabbitmq-sensu.sh
 $BASE_PATH/install-sensu.sh
 $BASE_PATH/install-sensu-client.sh
 $BASE_PATH/install-sensu-server.sh
