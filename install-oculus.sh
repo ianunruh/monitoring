@@ -6,7 +6,7 @@ useradd -b /opt oculus
 mkdir -p /var/log/oculus
 chown oculus:oculus /var/log/oculus
 
-apt-get install -y ruby git openjdk-7-jdk libxml2-dev libxslt1-dev
+apt-get install -y ruby ruby-dev build-essential git openjdk-7-jdk libxml2-dev libxslt1-dev
 
 gem install rake bundler --no-ri --no-rdoc
 
@@ -30,14 +30,11 @@ bundle install
 # Configure Resque
 cp $BASE_PATH/opt/oculus/Rakefile /opt/oculus
 
-#
-# Services
-#   cd /opt/oculus && sudo -u oculus thin start
-#   cd /opt/oculus && sudo -u oculus rake resque:start_workers
-#
-# Cron jobs
-#   cd /opt/oculus/scripts && ./import.rb
-#
-# Only works with older version of Elasticsearch (0.9.x series)
-# https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.13.zip
-#
+# Configure and start services
+cp $BASE_PATH/etc/init/oculus* /etc/init
+
+service oculus-resque start
+service oculus-webapp start
+
+# Configure cron job
+cp $BASE_PATH/etc/cron.d/oculus-import /etc/cron.d

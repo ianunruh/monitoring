@@ -1,0 +1,1 @@
+*/2 * * * * oculus /opt/oculus/scripts/import.rb > /var/log/oculus/import.log 2>&1
