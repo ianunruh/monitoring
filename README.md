@@ -73,13 +73,13 @@ service logstash restart
 Secure copy the certificate and key to the node you're shipping logs from. Then on that node, perform the following.
 
 ```sh
+mkdir -p /etc/logstash-forwarder
+mv forwarder.crt forwarder.key /etc/logstash-forwarder
+
 apt-get install -y git
 
 git clone git://github.com/ianunruh/monitoring.git
 cd monitoring
-
-mkdir tmp
-mv /path/to/forwarder.crt /path/to/forwarder.key tmp
 
 ./install-logstash-forwarder.sh
 ```
