@@ -56,3 +56,37 @@ EOF
 
 ./install-sensu-common-metrics.sh
 ```
+
+### Logstash Forwarder
+
+To use Logstash Forwarder, you first need to setup the Lumberjack input on your Logstash indexer.
+
+```sh
+./generate-lumberjack-ssl.sh
+
+cp tmp/forwarder.key tmp/forwarder.crt /etc/logstash
+cp etc/logstash/conf.d/10-input-lumberjack.conf /etc/logstash/conf.d
+
+service logstash restart
+```
+
+Secure copy the certificate and key to the node you're shipping logs from. Then on that node, perform the following.
+
+```sh
+apt-get install -y git
+
+git clone git://github.com/ianunruh/monitoring.git
+cd monitoring
+
+mkdir tmp
+mv /path/to/forwarder.crt /path/to/forwarder.key tmp
+
+./install-logstash-forwarder.sh
+```
+
+On your indexer, you should start to see the logs flowing. If not, check the following logs.
+
+- `/var/log/logstash-forwarder.log` on the shipper
+- `/var/log/upstart/logstash-forwarder.log` on the shipper
+- `/var/log/logstash/logstash.log` on the indexer
+- `/var/log/upstart/logstash.log` on the indexer
