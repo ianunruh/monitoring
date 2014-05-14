@@ -18,6 +18,8 @@ cd /usr/share/elasticsearch/elasticsearch-oculus-plugin
 rake build
 cp OculusPlugins.jar ../lib
 
+cp $BASE_PATH/etc/elasticsearch/elasticsearch.yml /etc/elasticsearch
+
 service elasticsearch restart
 
 # Configure Oculus
