@@ -14,7 +14,6 @@ cp logstash-forwarder /usr/bin
 
 mkdir -p /etc/logstash-forwarder
 
-cp $TMP_PATH/forwarder.crt $TMP_PATH/forwarder.key /etc/logstash-forwarder
 cp $BASE_PATH/etc/init/logstash-forwarder.conf /etc/init
 cp $BASE_PATH/etc/logstash-forwarder/config.json /etc/logstash-forwarder
 
