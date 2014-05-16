@@ -131,12 +131,12 @@ INDEX_FILE = '/var/lib/graphite/search_index'  # Search index file
 ##########################
 DATABASES = {
     'default': {
-        'NAME': 'graphite',
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'USER': 'graphite',
-        'PASSWORD': 'graphite',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'NAME': '/var/lib/graphite/graphite.db',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': ''
     }
 }
 
