@@ -1,17 +1,12 @@
 #!/bin/bash
 BASE_PATH=`pwd`
 
-useradd -b /opt skyline
+useradd -d /opt/skyline -M skyline
 
 mkdir -p /var/log/skyline
 chown skyline:skyline /var/log/skyline
 
-apt-get install -y python-pip python-numpy python-scipy git
-
-pip install pandas
-pip install patsy
-pip install statsmodels
-pip install msgpack_python
+apt-get install -y python-pip python-numpy python-scipy python-pandas python-msgpack git
 
 git clone git://github.com/etsy/skyline.git /opt/skyline
 cd /opt/skyline
