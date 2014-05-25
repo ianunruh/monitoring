@@ -103,3 +103,5 @@ cd monitoring
 
 ./install-all-graylog2.sh
 ```
+
+Note that Graylog2 requires its own Elasticsearch cluster, so you **should not** use this script on the same node as other installation scripts.
