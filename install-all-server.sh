@@ -15,6 +15,7 @@ $BASE_PATH/install-elasticsearch-hq.sh
 $BASE_PATH/install-rabbitmq.sh
 $BASE_PATH/install-redis.sh
 
+$BASE_PATH/install-memcached.sh
 $BASE_PATH/install-graphite-carbon.sh
 $BASE_PATH/install-graphite-web.sh
 $BASE_PATH/install-grafana.sh
