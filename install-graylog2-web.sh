@@ -2,6 +2,9 @@
 ##
 # Installs the Graylog2 web interface
 #
+# Provides:
+# - HTTP (TCP/8400)
+#
 # Dependencies:
 # - Graylog2 server
 ##

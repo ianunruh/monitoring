@@ -2,8 +2,11 @@
 ##
 # Installs Carbon, the metric storage component of Graphite
 #
-# This particular configuration will simply relay metrics to a local cache, listening on
-# ports TCP/2013 and TCP/2014
+# This particular configuration will simply relay metrics to a local cache
+#
+# Provides:
+# - Line receiver (TCP/2013)
+# - Pickle receiver (TCP/2014)
 ##
 BASE_PATH=`pwd`
 

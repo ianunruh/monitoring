@@ -2,7 +2,8 @@
 ##
 # Installs Oculus, the metric correlation component of Etsy's Kale stack
 #
-# Uses Thin to provide Oculus at `http://localhost:5000`
+# Provides:
+# - HTTP (TCP/5000)
 #
 # Dependencies:
 # - Elasticsearch (0.90.x)

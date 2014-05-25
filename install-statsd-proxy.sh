@@ -2,7 +2,8 @@
 ##
 # Installs the Statsd cluster proxy
 #
-# Listens for metrics on UDP/8125
+# Provides:
+# - Metric proxy (UDP/8125)
 ##
 BASE_PATH=`pwd`
 

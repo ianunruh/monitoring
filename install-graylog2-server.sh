@@ -3,7 +3,11 @@
 # Installs the Graylog2 server
 #
 # Graylog2 requires an entire Elasticsearch cluster to itself, so this script will overwrite
-# the Elasticsearch config to change the cluster name. The REST API is available on TCP/12900
+# the Elasticsearch config to change the cluster name. Configured with the username `admin`
+# and the password `password`.
+#
+# Provides:
+# - HTTP REST API (TCP/12900)
 #
 # Dependencies:
 # - Elasticsearch (0.90.x)

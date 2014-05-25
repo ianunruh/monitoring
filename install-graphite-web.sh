@@ -4,6 +4,11 @@
 #
 # It is backed by SQLite, since Grafana should be utilized instead of the Graphite dashboard.
 #
+# Uses Apache to provide Graphite at `http://localhost`
+#
+# Provides:
+# - HTTP (TCP/80)
+#
 # Dependencies:
 # - Carbon
 ##

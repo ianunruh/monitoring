@@ -2,7 +2,8 @@
 ##
 # Installs the Sensu API component
 #
-# Uses EventMachine to provide a REST API at `http://localhost:4567`
+# Provides:
+# - HTTP REST API (TCP/4567)
 #
 # Dependencies:
 # - Omnibus package for Sensu

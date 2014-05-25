@@ -4,6 +4,9 @@
 #
 # Uses Apache to provide the dashboard at `http://localhost/graylog2-stream-dashboard`
 #
+# Provides:
+# - HTTP (TCP/80)
+#
 # Dependencies:
 # - Graylog2 server with CORS enabled
 ##

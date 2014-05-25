@@ -2,10 +2,13 @@
 ##
 # Installs Skyline, the anomaly detection component of Etsy's Kale stack
 #
-# Uses WSGI to provide Skyline at `http://localhost:9000`. Horizon listens for metrics from Graphite 
-# on TCP/2024 and msgpack-encoded packets on UDP/2025.
+# Provides:
+# - HTTP (TCP/9000)
+# - Graphite metric receiver (TCP/2024)
+# - MessagePack metric receiver (UDP/2025)
 #
 # Dependencies:
+# - Carbon
 # - Redis
 ##
 BASE_PATH=`pwd`

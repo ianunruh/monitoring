@@ -2,8 +2,10 @@
 ##
 # Installs the Sensu dashboard component
 #
-# Uses EventMachine to provide a REST API at `http://localhost:8080` with the username `admin`
-# and the password `secret`
+# Configured with the username `admin` and the password `secret`
+#
+# Provides:
+# - HTTP (TCP/8080)
 #
 # Dependencies:
 # - Omnibus package for Sensu

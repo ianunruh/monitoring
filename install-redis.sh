@@ -1,6 +1,9 @@
 #!/bin/bash
 ##
 # Installs Redis
+#
+# Provides:
+# - Redis (TCP/6379)
 ##
 BASE_PATH=`pwd`
 

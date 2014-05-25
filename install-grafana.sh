@@ -4,6 +4,9 @@
 #
 # Uses Apache to provide Grafana at `http://localhost/grafana`
 #
+# Provides:
+# - HTTP (TCP/80)
+#
 # Dependencies:
 # - Elasticsearch (any version)
 # - Graphite web
