@@ -4,7 +4,7 @@ BASE_PATH=`pwd`
 $BASE_PATH/clean.sh
 $BASE_PATH/generate-sensu-ssl.sh
 
-$BASE_PATH/install-oculus-elasticsearch.sh
+$BASE_PATH/install-elasticsearch-old.sh
 $BASE_PATH/install-elasticsearch-head.sh
 
 $BASE_PATH/install-rabbitmq.sh

@@ -4,6 +4,3 @@ echo "deb http://packages.elasticsearch.org/elasticsearch/0.90/debian stable mai
 
 apt-get update
 apt-get install -y elasticsearch openjdk-7-jre-headless
-update-rc.d elasticsearch defaults
-
-service elasticsearch start
