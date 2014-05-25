@@ -29,6 +29,9 @@ $BASE_PATH/install-sensu-api.sh
 $BASE_PATH/install-sensu-dashboard.sh
 $BASE_PATH/install-sensu-metrics-relay.sh
 
+$BASE_PATH/install-flapjack.sh
+$BASE_PATH/install-sensu-flapjack.sh
+
 $BASE_PATH/install-logstash.sh
 $BASE_PATH/install-kibana.sh
 
