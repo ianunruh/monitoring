@@ -7,6 +7,7 @@ $BASE_PATH/generate-sensu-ssl.sh
 $BASE_PATH/install-elasticsearch.sh
 $BASE_PATH/install-elasticsearch-curator.sh
 $BASE_PATH/install-elasticsearch-head.sh
+$BASE_PATH/install-elasticsearch-hq.sh
 
 $BASE_PATH/install-rabbitmq.sh
 $BASE_PATH/install-redis.sh
