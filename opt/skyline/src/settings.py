@@ -3,7 +3,7 @@ Shared settings
 """
 
 # The path for the Redis unix socket
-REDIS_SOCKET_PATH = '/tmp/redis.sock'
+REDIS_SOCKET_PATH = '/var/run/redis/redis.sock'
 
 # The Skyline logs directory. Do not include a trailing slash.
 LOG_PATH = '/var/log/skyline'
