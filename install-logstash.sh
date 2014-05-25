@@ -1,4 +1,7 @@
 #!/bin/bash
+##
+# Installs Logstash
+##
 curl -s http://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add -
 echo "deb http://packages.elasticsearch.org/logstash/1.4/debian stable main" > /etc/apt/sources.list.d/logstash.list
 

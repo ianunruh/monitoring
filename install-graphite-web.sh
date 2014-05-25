@@ -1,4 +1,12 @@
 #!/bin/bash
+##
+# Installs Graphite web, which provides an API and dashboard for consumers of metrics
+#
+# It is backed by SQLite, since Grafana should be utilized instead of the Graphite dashboard.
+#
+# Dependencies:
+# - Carbon
+##
 BASE_PATH=`pwd`
 
 apt-get install -y graphite-web apache2 apache2-mpm-worker libapache2-mod-wsgi

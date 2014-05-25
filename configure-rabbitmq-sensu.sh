@@ -1,4 +1,11 @@
 #!/bin/bash
+##
+# Configures RabbitMQ for Sensu
+#
+# Dependencies:
+# - RabbitMQ
+# - SSL certificates generated with `generate-sensu-ssl.sh`
+##
 BASE_PATH=`pwd`
 SSL_PATH=$BASE_PATH/tmp/ssl_certs
 

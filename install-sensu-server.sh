@@ -1,4 +1,13 @@
 #!/bin/bash
+##
+# Installs the Sensu server component
+#
+# Dependencies:
+# - Omnibus package for Sensu
+# - RabbitMQ
+# - Redis
+# - SSL certificates generated with `generate-sensu-ssl.sh`
+##
 BASE_PATH=`pwd`
 SSL_PATH=$BASE_PATH/tmp/ssl_certs
 

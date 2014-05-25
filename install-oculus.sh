@@ -1,4 +1,13 @@
 #!/bin/bash
+##
+# Installs Oculus, the metric correlation component of Etsy's Kale stack
+#
+# Uses Thin to provide Oculus at `http://localhost:5000`
+#
+# Dependencies:
+# - Elasticsearch (0.90.x)
+# - Redis
+##
 BASE_PATH=`pwd`
 
 useradd -b /opt oculus

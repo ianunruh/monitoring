@@ -1,4 +1,12 @@
 #!/bin/bash
+##
+# Installs the Graylog2 stream dashboard
+#
+# Uses Apache to provide the dashboard at `http://localhost/graylog2-stream-dashboard`
+#
+# Dependencies:
+# - Graylog2 server with CORS enabled
+##
 BASE_PATH=`pwd`
 TMP_PATH=$BASE_PATH/tmp
 

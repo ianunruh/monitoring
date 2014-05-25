@@ -1,4 +1,9 @@
 #!/bin/bash
+##
+# Installs the Statsd cluster proxy
+#
+# Listens for metrics on UDP/8125
+##
 BASE_PATH=`pwd`
 
 add-apt-repository -y ppa:chris-lea/node.js

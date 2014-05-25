@@ -1,4 +1,7 @@
 #!/bin/bash
+##
+# Installs RabbitMQ
+##
 curl -s http://www.rabbitmq.com/rabbitmq-signing-key-public.asc | apt-key add -
 echo "deb http://www.rabbitmq.com/debian/ testing main" > /etc/apt/sources.list.d/rabbitmq.list
 

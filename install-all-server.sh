@@ -1,4 +1,7 @@
 #!/bin/bash
+##
+# Installs the Logstash and Sensu/Graphite stacks
+##
 BASE_PATH=`pwd`
 
 $BASE_PATH/clean.sh

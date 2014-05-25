@@ -1,4 +1,13 @@
 #!/bin/bash
+##
+# Installs Skyline, the anomaly detection component of Etsy's Kale stack
+#
+# Uses WSGI to provide Skyline at `http://localhost:9000`. Horizon listens for metrics from Graphite 
+# on TCP/2024 and msgpack-encoded packets on UDP/2025.
+#
+# Dependencies:
+# - Redis
+##
 BASE_PATH=`pwd`
 
 useradd -d /opt/skyline -M skyline

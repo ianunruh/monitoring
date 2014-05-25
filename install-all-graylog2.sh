@@ -1,4 +1,7 @@
 #!/bin/bash
+##
+# Installs the Graylog2 stack
+##
 BASE_PATH=`pwd`
 
 $BASE_PATH/install-elasticsearch-old.sh

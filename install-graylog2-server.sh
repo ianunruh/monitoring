@@ -1,4 +1,14 @@
 #!/bin/bash
+##
+# Installs the Graylog2 server
+#
+# Graylog2 requires an entire Elasticsearch cluster to itself, so this script will overwrite
+# the Elasticsearch config to change the cluster name. The REST API is available on TCP/12900
+#
+# Dependencies:
+# - Elasticsearch (0.90.x)
+# - MongoDB
+##
 BASE_PATH=`pwd`
 TMP_PATH=$BASE_PATH/tmp
 

@@ -1,4 +1,13 @@
 #!/bin/bash
+##
+# Installs Grafana, an alternate Graphite dashboard
+#
+# Uses Apache to provide Grafana at `http://localhost/grafana`
+#
+# Dependencies:
+# - Elasticsearch (any version)
+# - Graphite web
+##
 BASE_PATH=`pwd`
 TMP_PATH=$BASE_PATH/tmp
 

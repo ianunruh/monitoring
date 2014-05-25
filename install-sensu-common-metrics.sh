@@ -1,4 +1,15 @@
 #!/bin/bash
+##
+# Installs some common metrics to quickly get started with Sensu
+#
+# Usage:
+# - To configure and install metrics: `install-sensu-common-metrics.sh`
+# - To only configure metrics: `install-sensu-common-metrics.sh server`
+# - To only install metrics: `install-sensu-common-metrics.sh client`
+#
+# Dependencies:
+# - Omnibus package for Sensu
+##
 BASE_PATH=`pwd`
 TMP_PATH=$BASE_PATH/tmp
 

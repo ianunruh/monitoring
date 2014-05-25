@@ -1,4 +1,11 @@
 #!/bin/bash
+##
+# Installs Logstash forwarder, a lightweight log shipper
+#
+# Dependencies:
+# - Logstash indexer with Lumberjack input
+# - SSL certificate generated with `generate-lumberjack-ssl.sh`
+##
 BASE_PATH=`pwd`
 TMP_PATH=$BASE_PATH/tmp
 

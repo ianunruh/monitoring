@@ -1,4 +1,10 @@
 #!/bin/bash
+##
+# Installs the Sensu omnibus package
+#
+# This package contains all of the different Sensu components. Use specific scripts
+# to configure each component on different nodes.
+##
 BASE_PATH=`pwd`
 
 curl -s http://repos.sensuapp.org/apt/pubkey.gpg | apt-key add -

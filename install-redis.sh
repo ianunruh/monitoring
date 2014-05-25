@@ -1,4 +1,7 @@
 #!/bin/bash
+##
+# Installs Redis
+##
 BASE_PATH=`pwd`
 
 echo "vm.overcommit_memory=1" > /etc/sysctl.conf

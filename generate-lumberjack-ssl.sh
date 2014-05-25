@@ -1,4 +1,7 @@
 #!/bin/bash
+##
+# Generates a single certificate and key for the Lumberjack protocol
+##
 BASE_PATH=`pwd`
 TMP_PATH=$BASE_PATH/tmp
 

@@ -1,4 +1,10 @@
 #!/bin/bash
+##
+# Installs Carbon, the metric storage component of Graphite
+#
+# This particular configuration will simply relay metrics to a local cache, listening on
+# ports TCP/2013 and TCP/2014
+##
 BASE_PATH=`pwd`
 
 export DEBIAN_FRONTEND=noninteractive

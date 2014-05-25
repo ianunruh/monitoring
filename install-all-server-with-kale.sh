@@ -1,4 +1,10 @@
 #!/bin/bash
+##
+# Installs the Logstash and Sensu/Graphite stacks, along with the Kale stack
+#
+# Oculus requires the 0.90.x branch of Elasticsearch, so this script must be run instead of the
+# `install-all-server.sh` script.
+##
 BASE_PATH=`pwd`
 
 $BASE_PATH/clean.sh

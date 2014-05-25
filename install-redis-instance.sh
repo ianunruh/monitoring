@@ -1,4 +1,7 @@
 #!/bin/bash
+##
+# Installs an instance of Redis
+##
 BASE_PATH=`pwd`
 TMP_PATH=$BASE_PATH/tmp
 

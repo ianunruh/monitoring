@@ -1,4 +1,11 @@
 #!/bin/bash
+##
+# Configures Carbon to relay metrics to Horizon
+#
+# Dependencies:
+# - Carbon
+# - Horizon
+##
 BASE_PATH=`pwd`
 
 cp $BASE_PATH/etc/carbon/skyline/carbon.conf /etc/carbon

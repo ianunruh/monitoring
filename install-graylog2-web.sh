@@ -1,4 +1,10 @@
 #!/bin/bash
+##
+# Installs the Graylog2 web interface
+#
+# Dependencies:
+# - Graylog2 server
+##
 BASE_PATH=`pwd`
 TMP_PATH=$BASE_PATH/tmp
 

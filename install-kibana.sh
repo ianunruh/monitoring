@@ -1,4 +1,12 @@
 #!/bin/bash
+##
+# Installs Kibana, a dashboard for Elasticsearch and Logstash
+#
+# Uses Apache to provide Grafana at `http://localhost/kibana`
+#
+# Dependencies:
+# - Elasticsearch (any version)
+##
 BASE_PATH=`pwd`
 TMP_PATH=$BASE_PATH/tmp
 

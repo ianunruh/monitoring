@@ -1,4 +1,9 @@
 #!/bin/bash
+##
+# Installs Statsd
+#
+# Listens for metrics on UDP/8125 and provides an admin interface on TCP/8126
+##
 BASE_PATH=`pwd`
 
 add-apt-repository -y ppa:chris-lea/node.js

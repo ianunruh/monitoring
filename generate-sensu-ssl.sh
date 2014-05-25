@@ -1,4 +1,7 @@
 #!/bin/bash
+##
+# Generates certificates for RabbitMQ brokers and clients
+##
 BASE_PATH=`pwd`
 TMP_PATH=$BASE_PATH/tmp
 

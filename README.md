@@ -90,3 +90,16 @@ On your indexer, you should start to see the logs flowing. If not, check the fol
 - `/var/log/upstart/logstash-forwarder.log` on the shipper
 - `/var/log/logstash/logstash.log` on the indexer
 - `/var/log/upstart/logstash.log` on the indexer
+
+### Graylog2
+
+To install Graylog2 with the web interface and stream dashboard, simply use the following.
+
+```sh
+apt-get install -y git
+
+git clone git://github.com/ianunruh/monitoring.git
+cd monitoring
+
+./install-all-graylog2.sh
+```

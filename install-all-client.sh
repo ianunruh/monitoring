@@ -1,4 +1,7 @@
 #!/bin/bash
+##
+# Installs clients for Logstash and Sensu
+##
 BASE_PATH=`pwd`
 
 $BASE_PATH/install-logstash.sh

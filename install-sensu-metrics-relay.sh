@@ -1,4 +1,10 @@
 #!/bin/bash
+##
+# Installs WizardVan, the metrics relay plugin for Sensu
+#
+# Dependencies:
+# - Sensu server
+##
 BASE_PATH=`pwd`
 TMP_PATH=$BASE_PATH/tmp
 
