@@ -87,7 +87,7 @@ BOREDOM_SET_SIZE = 1
 
 # The canary metric should be a metric with a very high, reliable resolution
 # that you can use to gauge the status of the system as a whole.
-CANARY_METRIC = 'statsd.numStats'
+CANARY_METRIC = 'carbon.relays.monitoring-a.metricsReceived'
 
 # These are the algorithms that the Analyzer will run. To add a new algorithm,
 # you must both define the algorithm in algorithms.py and add its name here.

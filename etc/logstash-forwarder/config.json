@@ -1,7 +1,7 @@
 {
   "network": {
     "servers": [
-      "localhost:5043"
+      "192.168.12.10:5043"
     ],
 
     "ssl ca": "/etc/logstash-forwarder/forwarder.crt",

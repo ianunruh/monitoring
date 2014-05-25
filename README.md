@@ -17,79 +17,32 @@ For a small infrastructure (~dozen nodes), you need about 2GB memory and 2 cores
 
 ## Usage
 
-Use the following to install the entire monitoring stack on a single server.
+### Vagrant
 
-```sh
-apt-get install -y git
+If you have Vagrant installed, simply run `vagrant up`. This creates two boxes:
 
-git clone git://github.com/ianunruh/monitoring.git
-cd monitoring
+- `monitoring` on 192.168.12.10
+- `app1` on 192.168.12.11
 
-# Run ONLY one of the following scripts
-./install-all-server.sh
-./install-all-server-with-kale.sh
-```
+The `monitoring` box provides the following:
 
-On your clients, you can use the following to install Logstash and Sensu clients.
+- [Kibana](http://192.168.12.10/kibana)
+- [Grafana](http://192.168.12.10/grafana)
+- [Skyline](http://192.168.12.10:1500) (best viewed in Chrome)
+- [Oculus](http://192.168.12.10:3000)
+- [Flapjack](http://192.168.12.10:3080)
+- [Sensu dashboard](http://192.168.12.10:8080)
+- [ElasticHQ](http://192.168.12.10:9200/_plugin/HQ)
 
-```sh
-apt-get install -y git
+For client nodes, it provides:
 
-git clone git://github.com/ianunruh/monitoring.git
-cd monitoring
-
-./install-all-client.sh
-```
-
-To start feeding metrics into the Sensu/Graphite/Kale pipeline immediately, use the following on the server.
-
-```sh
-cat <<EOF > /etc/sensu/conf.d/client.json
-{
-  "client": {
-    "name": "YOUR_HOSTNAME",
-    "address": "YOUR_PRIMARY_IP",
-    "subscriptions": ["all"]
-  }
-}
-EOF
-
-./install-sensu-common-metrics.sh
-```
-
-### Logstash Forwarder
-
-To use Logstash Forwarder, you first need to setup the Lumberjack input on your Logstash indexer.
-
-```sh
-./generate-lumberjack-ssl.sh
-
-cp tmp/forwarder.key tmp/forwarder.crt /etc/logstash
-cp etc/logstash/conf.d/10-input-lumberjack.conf /etc/logstash/conf.d
-
-service logstash restart
-```
-
-Secure copy the certificate and key to the node you're shipping logs from. Then on that node, perform the following.
-
-```sh
-mkdir -p /etc/logstash-forwarder
-mv forwarder.crt forwarder.key /etc/logstash-forwarder
-
-apt-get install -y git
-
-git clone git://github.com/ianunruh/monitoring.git
-cd monitoring
-
-./install-logstash-forwarder.sh
-```
-
-On your indexer, you should start to see the logs flowing. If not, check the following logs.
-
-- `/var/log/logstash-forwarder.log` on the shipper
-- `/var/log/upstart/logstash-forwarder.log` on the shipper
-- `/var/log/logstash/logstash.log` on the indexer
-- `/var/log/upstart/logstash.log` on the indexer
+- AMQP (TCP/5672)
+- AMQP over SSL (TCP/5671)
+- Redis (TCP/6379)
+- Statsd (UDP/8125)
+- Lumberjack receiver (TCP/5043)
+- Graphite line receiver (TCP/2013)
+- Graphite Pickle receiver (TCP/2014)
 
 ### Graylog2
 
