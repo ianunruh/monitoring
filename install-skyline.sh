@@ -3,7 +3,7 @@
 # Installs Skyline, the anomaly detection component of Etsy's Kale stack
 #
 # Provides:
-# - HTTP (TCP/9000)
+# - HTTP (TCP/1500)
 # - Graphite metric receiver (TCP/2024)
 # - MessagePack metric receiver (UDP/2025)
 #

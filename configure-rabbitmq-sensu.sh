@@ -2,6 +2,9 @@
 ##
 # Configures RabbitMQ for Sensu
 #
+# Provides:
+# - AMQP over SSL (TCP/5671)
+#
 # Dependencies:
 # - RabbitMQ
 # - SSL certificates generated with `generate-sensu-ssl.sh`

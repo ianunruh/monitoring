@@ -3,7 +3,7 @@
 # Installs Oculus, the metric correlation component of Etsy's Kale stack
 #
 # Provides:
-# - HTTP (TCP/5000)
+# - HTTP (TCP/3000)
 #
 # Dependencies:
 # - Elasticsearch (0.90.x)
@@ -28,7 +28,7 @@ cd /usr/share/elasticsearch/elasticsearch-oculus-plugin
 rake build
 cp OculusPlugins.jar ../lib
 
-cp $BASE_PATH/etc/elasticsearch/elasticsearch.yml /etc/elasticsearch
+cp $BASE_PATH/etc/elasticsearch/oculus/elasticsearch.yml /etc/elasticsearch
 
 service elasticsearch restart
 
