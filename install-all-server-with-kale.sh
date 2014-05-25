@@ -29,7 +29,7 @@ $BASE_PATH/install-sensu-server.sh
 $BASE_PATH/install-sensu-api.sh
 $BASE_PATH/install-sensu-dashboard.sh
 $BASE_PATH/install-sensu-metrics-relay.sh
-$BASE_PATH/install-sensu-common-metrics.sh server
+$BASE_PATH/configure-sensu-metrics-server.sh
 
 $BASE_PATH/install-flapjack.sh
 $BASE_PATH/install-sensu-flapjack.sh
@@ -39,7 +39,7 @@ $BASE_PATH/configure-logstash-indexer.sh
 $BASE_PATH/install-kibana.sh
 
 $BASE_PATH/install-skyline.sh
-$BASE_PATH/install-skyline-carbon-relay.sh
+$BASE_PATH/configure-carbon-skyline.sh
 $BASE_PATH/install-oculus.sh
 
 $BASE_PATH/install-statsd.sh
