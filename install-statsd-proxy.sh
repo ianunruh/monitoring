@@ -4,7 +4,7 @@ BASE_PATH=`pwd`
 add-apt-repository -y ppa:chris-lea/node.js
 
 apt-get update
-apt-get install -y git nodejs
+apt-get install -y build-essential git nodejs
 
 useradd -s /bin/false -d /var/lib/statsd -m statsd
 
@@ -15,7 +15,9 @@ git clone git://github.com/etsy/statsd.git /usr/share/statsd
 
 mkdir -p /etc/statsd
 
-cp $BASE_PATH/etc/statsd/stats.js /etc/statsd
-cp $BASE_PATH/etc/init/statsd.conf /etc/init
+cp $BASE_PATH/etc/statsd/proxy.js /etc/statsd
+cp $BASE_PATH/etc/init/statsd-proxy.conf /etc/init
 
-start statsd
+cd /usr/share/statsd && npm install
+
+start statsd-proxy
