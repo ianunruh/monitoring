@@ -1,0 +1,4 @@
+[ElasticSearchOutput]
+index = "logstash-%{2006.01.02}"
+message_matcher = "TRUE"
+format = "logstash_v0"

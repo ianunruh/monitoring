@@ -1,0 +1,4 @@
+[TcpInput]
+address = ":5565"
+parser_type = "message.proto"
+decoder = "ProtobufDecoder"
