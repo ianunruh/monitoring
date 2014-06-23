@@ -17,14 +17,17 @@ add-apt-repository -y ppa:chris-lea/node.js
 apt-get update
 apt-get install -y git nodejs
 
-useradd -s /bin/false -d /opt/uchiwa uchiwa
+npm install -g bower
+
+useradd -s /bin/bash -d /opt/uchiwa uchiwa
 
 git clone git://github.com/palourde/uchiwa.git /opt/uchiwa
 
-cd /opt/uchiwa
-npm install
-
 cp $BASE_PATH/etc/init/uchiwa.conf /etc/init
 cp $BASE_PATH/opt/uchiwa/config.js /opt/uchiwa
+
+chown -R uchiwa:uchiwa /opt/uchiwa
+
+sudo -u -i uchiwa npm install
 
 start uchiwa
