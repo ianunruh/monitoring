@@ -44,17 +44,41 @@ For client nodes, it provides:
 - Graphite line receiver (TCP/2013)
 - Graphite Pickle receiver (TCP/2014)
 
+### Sentry
+
+This package provides scripts to install Sentry with the following configuration.
+
+- memcached
+- supervisord
+- Redis as work queue, update buffer and TSDB
+- PostgreSQL as node store
+
+You can use the following to perform the installation.
+
+```sh
+vagrant up --no-provision monitoring
+vagrant ssh monitoring
+```
+
+```sh
+sudo -i
+cd /vagrant && ./install-all-sentry.sh
+```
+
+After installation, the [Sentry web interface](http://192.168.12.10:9000) should be available. Login with `admin` and no password.
+
 ### Graylog2
 
 To install Graylog2 with the web interface and stream dashboard, simply use the following.
 
 ```sh
-apt-get install -y git
+vagrant up --no-provision monitoring
+vagrant ssh monitoring
+```
 
-git clone git://github.com/ianunruh/monitoring.git
-cd monitoring
-
-./install-all-graylog2.sh
+```sh
+sudo -i
+cd /vagrant && ./install-all-graylog2.sh
 ```
 
 Note that Graylog2 requires its own Elasticsearch cluster, so you **should not** use this script on the same node as other installation scripts.

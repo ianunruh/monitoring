@@ -1,0 +1,3 @@
+#!/bin/bash
+source /usr/share/sentry/bin/activate
+sentry --config=/etc/sentry/settings.py top

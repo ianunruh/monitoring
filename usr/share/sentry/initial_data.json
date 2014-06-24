@@ -1,0 +1,16 @@
+[
+    {
+        "pk": 1,
+        "model": "sentry.user",
+        "fields": {
+            "email": "admin@example.com",
+            "first_name": "",
+            "is_active": true,
+            "is_staff": true,
+            "is_superuser": true,
+            "last_name": "",
+            "password": "pbkdf2_sha256$10000$WV9kQMXmZcrr$ux+wdqT3QU3Q9njkckTQW6BLWPGrnxvY2/EFOtMRXM8=",
+            "username": "admin"
+        }
+    }
+]
