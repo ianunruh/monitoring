@@ -25,9 +25,9 @@ useradd -s /bin/false -d /var/lib/graylog2 -m graylog2
 mkdir -p /var/log/graylog2
 chown graylog2:graylog2 /var/log/graylog2
 
-curl -O -L https://github.com/Graylog2/graylog2-server/releases/download/0.20.2/graylog2-server-0.20.2.tgz
-tar xf graylog2-server-0.20.2.tgz
-cp -R graylog2-server-0.20.2 /usr/share/graylog2-server
+curl -O -L https://github.com/Graylog2/graylog2-server/releases/download/0.20.3/graylog2-server-0.20.3.tgz
+tar xf graylog2-server-0.20.3.tgz
+cp -R graylog2-server-0.20.3 /usr/share/graylog2-server
 
 mkdir -p /etc/graylog2
 
