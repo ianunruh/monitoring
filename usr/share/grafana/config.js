@@ -15,6 +15,12 @@ function (Settings) {
         type: 'graphite',
         url: 'http://'+window.location.hostname,
         default: true
+      },
+      influxdb: {
+        type: 'influxdb',
+        url: 'http://'+window.location.hostname+':8086/db/stats',
+        username: 'root',
+        password: 'root'
       }
     },
 
