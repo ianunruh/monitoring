@@ -4,15 +4,15 @@ Set of scripts for evaluating various monitoring stacks (log aggregation, metric
 
 Currently, the following stacks can be installed.
 
-- Sensu (including Uchiwa and Sensu Admin dashboards)
-- Flapjack
-- Logstash (with Elasticsearch/Kibana and logstash-forwarder)
-- Etsy Kale (Skyline for anomaly detection, Oculus for correlation)
-- Heka
-- Sentry
-- Graylog2 (including standard and streaming dashboards)
-- Statsd
-- Graphite (with Grafana)
+- [Sensu](http://sensuapp.org/) (including [Uchiwa](https://github.com/palourde/uchiwa) and [Sensu Admin](https://github.com/sensu/sensu-admin) dashboards)
+- [Flapjack](http://flapjack.io/)
+- [Logstash](http://logstash.net/) (with [Elasticsearch](http://www.elasticsearch.org/overview/elasticsearch/)/[Kibana](http://www.elasticsearch.org/overview/kibana/) and [logstash-forwarder](https://github.com/elasticsearch/logstash-forwarder))
+- Etsy's [Kale](http://codeascraft.com/2013/06/11/introducing-kale/) stack ([Skyline](https://github.com/etsy/skyline) for anomaly detection, [Oculus](https://github.com/etsy/oculus) for correlation)
+- [Heka](https://hekad.readthedocs.org/en/latest/)
+- [Sentry](http://sentry.readthedocs.org/en/latest/)
+- [Graylog2](http://graylog2.org/) (including standard and [streaming](https://github.com/Graylog2/graylog2-stream-dashboard) dashboards)
+- [Statsd](https://github.com/etsy/statsd/)
+- [Graphite](https://graphite.readthedocs.org/en/latest/) (with [Grafana](http://grafana.org/))
 
 ## Requirements
 
