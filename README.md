@@ -1,15 +1,18 @@
 # Monitoring
 
-Set of scripts to install various components needed to monitor every aspect of your infrastructure.
+Set of scripts for evaluating various monitoring stacks (log aggregation, metrics collection, metrics correlation, etc.)
 
-The big players in this stack are:
+Currently, the following stacks can be installed.
 
-- Sensu (API, dashboard, server, client)
-- Graphite (Carbon cache/relay, dashboard, Grafana)
-- Logstash (indexer, shipper, Kibana)
-- Kale (Oculus, Skyline)
-
-The supporting persistence/transport providers are PostgreSQL, Redis, RabbitMQ, and Elasticsearch.
+- Sensu (including Uchiwa and Sensu Admin dashboards)
+- Flapjack
+- Logstash (with Elasticsearch/Kibana and logstash-forwarder)
+- Etsy Kale (Skyline for anomaly detection, Oculus for correlation)
+- Heka
+- Sentry
+- Graylog2 (including standard and streaming dashboards)
+- Statsd
+- Graphite (with Grafana)
 
 ## Requirements
 
@@ -17,12 +20,14 @@ For a small infrastructure (~dozen nodes), you need about 2GB memory and 2 cores
 
 ## Usage
 
-### Vagrant
-
-If you have Vagrant installed, simply run `vagrant up`. This creates two boxes:
+Two Vagrant boxes are provided with this script.
 
 - `monitoring` on 192.168.12.10
 - `app1` on 192.168.12.11
+
+The `monitoring` box is intended for the different monitoring stacks, while `app1` is intended to try out clients.
+
+### Sensu/Logstash/Skyline
 
 The `monitoring` box provides the following:
 
@@ -65,7 +70,7 @@ sudo -i
 cd /vagrant && ./install-all-sentry.sh
 ```
 
-After installation, the [Sentry web interface](http://192.168.12.10:9000) should be available. Login with `admin` and no password.
+After installation, the [Sentry web interface](http://192.168.12.10:9000) should be available. Login with the username `admin` and the password `secret`.
 
 ### Graylog2
 
@@ -81,4 +86,30 @@ sudo -i
 cd /vagrant && ./install-all-graylog2.sh
 ```
 
-Note that Graylog2 requires its own Elasticsearch cluster, so you **should not** use this script on the same node as other installation scripts.
+After installation, you can access one of the following resources. Use the username `admin` and the passwod `password`.
+
+- [Web interface](http://192.168.12.10:8400/)
+- [Streaming dashboard](http://192.168.12.10/graylog2-streaming-dashboard)
+
+Note that Graylog2 requires its own Elasticsearch cluster, so **do not** use this script on the same node as other installation scripts.
+
+### Heka
+
+Heka was created by Mozilla as a lighter alternative to Logstash. This package provides scripts for installing a Heka router that outputs to Elasticsearch.
+
+```sh
+vagrant up --no-provision monitoring
+vagrant ssh monitoring
+```
+
+```sh
+sudo -i
+cd /vagrant && ./install-all-heka.sh
+```
+
+This package provides the following:
+
+- [Heka dashboard](http://192.168.12.10:4352/)
+- [Kibana](http://192.168.12.10/kibana/)
+- [ElasticHQ](http://192.168.12.10:9200/_plugin/HQ/)
+- Heka Protobuf input on `192.168.12.10` at TCP port 4352
