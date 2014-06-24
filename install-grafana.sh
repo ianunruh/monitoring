@@ -12,9 +12,8 @@
 # - Graphite web
 ##
 BASE_PATH=`pwd`
-TMP_PATH=$BASE_PATH/tmp
 
-mkdir -p $TMP_PATH && cd $TMP_PATH
+cd /tmp
 
 curl -O -L http://grafanarel.s3.amazonaws.com/grafana-1.6.1.tar.gz
 tar xf grafana-1.6.1.tar.gz

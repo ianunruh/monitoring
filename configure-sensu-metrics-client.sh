@@ -2,10 +2,7 @@
 ##
 # Installs Sensu check plugins for common metrics
 ##
-BASE_PATH=`pwd`
-TMP_PATH=$BASE_PATH/tmp
-
-mkdir -p $TMP_PATH && cd $TMP_PATH
+cd /tmp
 
 apt-get install -y git ruby ruby-dev build-essential sysstat
 

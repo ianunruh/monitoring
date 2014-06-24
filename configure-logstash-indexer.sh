@@ -12,14 +12,14 @@
 # - SSL certificate generated with `generate-lumberjack-ssl.sh`
 ##
 BASE_PATH=`pwd`
-TMP_PATH=$BASE_PATH/tmp
+BUILD_PATH=$BASE_PATH/build
 
 cp $BASE_PATH/etc/logstash/conf.d/10-input-lumberjack.conf /etc/logstash/conf.d
 cp $BASE_PATH/etc/logstash/conf.d/10-input-redis.conf /etc/logstash/conf.d
 cp $BASE_PATH/etc/logstash/conf.d/50-filter-* /etc/logstash/conf.d
 cp $BASE_PATH/etc/logstash/conf.d/90-output-elasticsearch.conf /etc/logstash/conf.d
 
-cp $TMP_PATH/forwarder.crt $TMP_PATH/forwarder.key /etc/logstash
+cp $BUILD_PATH/forwarder.crt $BUILD_PATH/forwarder.key /etc/logstash
 chown logstash:logstash /etc/logstash/forwarder.key
 chmod 640 /etc/logstash/forwarder.key
 

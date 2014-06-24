@@ -7,9 +7,8 @@
 # - Sensu server
 ##
 BASE_PATH=`pwd`
-TMP_PATH=$BASE_PATH/tmp
 
-mkdir $TMP_PATH && cd $TMP_PATH
+cd /tmp
 
 git clone git://github.com/sensu/sensu-community-plugins.git
 cp sensu-community-plugins/extensions/handlers/flapjack.rb /etc/sensu/extensions/handlers

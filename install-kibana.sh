@@ -11,9 +11,8 @@
 # - Elasticsearch (any version)
 ##
 BASE_PATH=`pwd`
-TMP_PATH=$BASE_PATH/tmp
 
-mkdir -p $TMP_PATH && cd $TMP_PATH
+cd /tmp
 
 curl -O -L https://download.elasticsearch.org/kibana/kibana/kibana-3.1.0.tar.gz
 tar xf kibana-3.1.0.tar.gz

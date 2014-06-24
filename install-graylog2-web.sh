@@ -9,11 +9,10 @@
 # - Graylog2 server
 ##
 BASE_PATH=`pwd`
-TMP_PATH=$BASE_PATH/tmp
 
 apt-get install -y openjdk-7-jre-headless
 
-mkdir -p $TMP_PATH && cd $TMP_PATH
+cd /tmp
 
 useradd -s /bin/false -d /var/lib/graylog2 -m graylog2
 

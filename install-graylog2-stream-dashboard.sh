@@ -11,9 +11,8 @@
 # - Graylog2 server with CORS enabled
 ##
 BASE_PATH=`pwd`
-TMP_PATH=$BASE_PATH/tmp
 
-mkdir -p $TMP_PATH && cd $TMP_PATH
+cd /tmp
 
 curl -O -L https://github.com/Graylog2/graylog2-stream-dashboard/releases/download/0.90/graylog2-stream-dashboard-0.90.0.tgz
 tar xf graylog2-stream-dashboard-0.90.0.tgz

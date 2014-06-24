@@ -17,7 +17,7 @@ BASE_PATH=`pwd`
 export RAILS_ENV=production
 
 apt-get install -y ruby ruby-dev libmysqlclient-dev libsqlite3-dev
-gem install bundler
+gem install bundler --no-ri --no-rdoc
 
 mkdir -p /opt/sensu
 

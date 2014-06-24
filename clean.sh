@@ -1,7 +1,7 @@
 #!/bin/bash
 ##
-# Cleans up any temporary files, including generated SSL certificates
+# Cleans up any generated files (such as SSL certificates)
 ##
 BASE_PATH=`pwd`
 
-rm -rf $BASE_PATH/tmp
+rm -rf $BASE_PATH/build
