@@ -28,6 +28,6 @@ cp $BASE_PATH/opt/uchiwa/config.js /opt/uchiwa
 
 chown -R uchiwa:uchiwa /opt/uchiwa
 
-sudo -u -i uchiwa npm install
+sudo -i -u uchiwa npm install
 
 start uchiwa
