@@ -1,0 +1,9 @@
+{
+  "influx": {
+    "host": "localhost",
+    "port": 8086,
+    "user": "root",
+    "password": "root",
+    "database": "stats"
+  }
+}

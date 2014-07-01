@@ -4,28 +4,28 @@
       "type": "metric",
       "command": "load-metrics.rb",
       "subscribers": ["all"],
-      "handlers": ["relay"],
+      "handlers": ["metrics"],
       "interval": 10
     },
     "memory_metrics": {
       "type": "metric",
       "command": "memory-metrics.rb",
       "subscribers": ["all"],
-      "handlers": ["relay"],
+      "handlers": ["metrics"],
       "interval": 10
     },
     "iostat_metrics": {
       "type": "metric",
       "command": "iostat-extended-metrics.rb",
       "subscribers": ["all"],
-      "handlers": ["relay"],
+      "handlers": ["metrics"],
       "interval": 10
     },
     "interface_metrics": {
       "type": "metric",
       "command": "interface-metrics.rb",
       "subscribers": ["all"],
-      "handlers": ["relay"],
+      "handlers": ["metrics"],
       "interval": 10
     }
   }

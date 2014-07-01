@@ -6,7 +6,7 @@ cd /tmp
 
 apt-get install -y git ruby ruby-dev build-essential sysstat
 
-gem install sensu sensu-plugin --no-ri --no-rdoc
+gem install sensu-plugin --no-ri --no-rdoc
 
 git clone git://github.com/sensu/sensu-community-plugins.git
 cd sensu-community-plugins/plugins
