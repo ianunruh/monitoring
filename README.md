@@ -14,6 +14,18 @@ Currently, the following stacks can be installed.
 - [Statsd](https://github.com/etsy/statsd/)
 - [Graphite](https://graphite.readthedocs.org/en/latest/) (with [Grafana](http://grafana.org/))
 
+## Goals
+
+Scripts included in this project must:
+
+- Follow best practices for Ubuntu and the applications being installed
+- Document service boundaries (ports, sockets, etc.) and default credentials
+- Be as minimal as possible
+- Be as reusable as possible (middleware and persistence, for example, can be reused between applications)
+- Try to stay close to each application's defaults (specifically port numbers and file locations)
+
+This makes it easier for people to solve issues during evaluation, as well as prepare for deploying the applications into staging and production environments.
+
 ## Requirements
 
 For a small infrastructure (~dozen nodes), you need about 2GB memory and 2 cores. If you install the Kale stack, this increases to 4GB memory and 4 cores. For larger infrastructures, or just higher availability, you'll want to start splitting up components to their own nodes.
