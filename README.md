@@ -13,6 +13,7 @@ Currently, the following stacks can be installed.
 - [Graylog2](http://graylog2.org/) (including standard and [streaming](https://github.com/Graylog2/graylog2-stream-dashboard) dashboards)
 - [Statsd](https://github.com/etsy/statsd/)
 - [Graphite](https://graphite.readthedocs.org/en/latest/) (with [Grafana](http://grafana.org/))
+- [InfluxDB](http://influxdb.com/)
 
 ## Goals
 
@@ -125,3 +126,25 @@ This package provides the following:
 - [Kibana](http://192.168.12.10/kibana/)
 - [ElasticHQ](http://192.168.12.10:9200/_plugin/HQ/)
 - Heka Protobuf input on `192.168.12.10` at TCP port 4352
+
+### InfluxDB
+
+InfluxDB is an open-source distributed time series database with no external dependencies. This package provides scripts for using InfluxDB as a general replacement for Graphite. It will install Sensu and InfluxDB, configuring Sensu to relay metrics to InfluxDB.
+
+```sh
+vagrant up --no-provision monitoring
+vagrant ssh monitoring
+```
+
+```sh
+sudo -i
+cd /vagrant && ./install-all-influxdb.sh
+```
+
+This package provides the following:
+
+- [Grafana](http://192.168.12.10/grafana) configured for InfluxDB
+- [InfluxDB admin interface](http://192.168.12.10:8083/) with default credentials
+- [Sensu dashboard](http://192.168.12.10:8080/) with username `admin` and password `secret`
+
+Use `vagrant up app1` to start collecting metrics
