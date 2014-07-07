@@ -9,6 +9,9 @@ $BASE_PATH/install-redis.sh
 
 $BASE_PATH/install-influxdb.sh
 
+$BASE_PATH/install-elasticsearch.sh
+$BASE_PATH/install-elasticsearch-hq.sh
+
 $BASE_PATH/configure-rabbitmq-sensu.sh
 $BASE_PATH/install-sensu.sh
 $BASE_PATH/install-sensu-server.sh
