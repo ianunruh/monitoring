@@ -1,4 +1,7 @@
+[ESLogstashV0Encoder]
+es_index_from_timestamp = true
+type_name = "%{Type}"
+
 [ElasticSearchOutput]
-index = "logstash-%{2006.01.02}"
 message_matcher = "TRUE"
-format = "logstash_v0"
+encoder = "ESLogstashV0Encoder"
