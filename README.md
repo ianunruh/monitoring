@@ -15,6 +15,7 @@ Currently, the following stacks can be installed.
 - [Graphite](https://graphite.readthedocs.org/en/latest/) (with [Grafana](http://grafana.org/))
 - [InfluxDB](http://influxdb.com/)
 - [Flume](http://flume.apache.org/)
+- [Fluentd](http://fluentd.org/)
 
 This repository started off from the ideas on my [Monitoring Everything](http://ianunruh.com/2014/05/monitor-everything.html) blog series.
 
@@ -154,7 +155,7 @@ Use `vagrant up app1` to start collecting metrics
 
 ### Flume
 
-[Flume](http://flume.apache.org) is a distributed, reliable, and available service for efficiently collecting, aggregating, and moving large amounts of log data. This package provides scripts for using Flume with Elasticsearch and the Syslog and Avro protocols.
+[Flume](http://flume.apache.org) is a distributed, reliable, and available service for efficiently collecting, aggregating, and moving large amounts of log data. This package provides scripts for using Flume with Elasticsearch and receivers for Avro and Syslog protocols.
 
 ```sh
 vagrant up --no-provision monitoring
@@ -174,3 +175,24 @@ This package provides the following:
 - Syslog input on `192.168.12.10` at TCP port 1514
 
 When using Kibana, you will need to change the index pattern to `[flume-]YYYY-MM-DD`.
+
+### Fluentd
+
+[Fluentd](http://fluentd.org) is an open source data collector to unify log management. This package provides scripts for using Fluentd with Elasticsearch and receivers for Syslog and HTTP protocols.
+
+```sh
+vagrant up --no-provision monitoring
+vagrant ssh monitoring
+```
+
+```sh
+sudo -i
+cd /vagrant && ./install-all-fluentd.sh
+```
+
+This package provides the following:
+
+- [Kibana](http://192.168.12.10/kibana/)
+- [ElasticHQ](http://192.168.12.10:9200/_plugin/HQ/)
+- HTTP input on `192.168.12.10` at TCP port 9880
+- Syslog input on `192.168.12.10` at TCP port 1514
