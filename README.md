@@ -15,6 +15,8 @@ Currently, the following stacks can be installed.
 - [Graphite](https://graphite.readthedocs.org/en/latest/) (with [Grafana](http://grafana.org/))
 - [InfluxDB](http://influxdb.com/)
 
+This repository started off from the ideas on my [Monitoring Everything](http://ianunruh.com/2014/05/monitor-everything.html) blog series.
+
 ## Goals
 
 Scripts included in this project must:
@@ -125,7 +127,7 @@ This package provides the following:
 - [Heka dashboard](http://192.168.12.10:4352/)
 - [Kibana](http://192.168.12.10/kibana/)
 - [ElasticHQ](http://192.168.12.10:9200/_plugin/HQ/)
-- Heka Protobuf input on `192.168.12.10` at TCP port 4352
+- Heka Protobuf input on `192.168.12.10` at TCP port 5565
 
 ### InfluxDB
 
