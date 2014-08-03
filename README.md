@@ -14,6 +14,7 @@ Currently, the following stacks can be installed.
 - [Statsd](https://github.com/etsy/statsd/)
 - [Graphite](https://graphite.readthedocs.org/en/latest/) (with [Grafana](http://grafana.org/))
 - [InfluxDB](http://influxdb.com/)
+- [Flume](http://flume.apache.org/)
 
 This repository started off from the ideas on my [Monitoring Everything](http://ianunruh.com/2014/05/monitor-everything.html) blog series.
 
@@ -131,7 +132,7 @@ This package provides the following:
 
 ### InfluxDB
 
-InfluxDB is an open-source distributed time series database with no external dependencies. This package provides scripts for using InfluxDB as a general replacement for Graphite. It will install Sensu and InfluxDB, configuring Sensu to relay metrics to InfluxDB.
+[InfluxDB](http://influxdb.org) is an open-source distributed time series database with no external dependencies. This package provides scripts for using InfluxDB as a general replacement for Graphite. It will install Sensu and InfluxDB, configuring Sensu to relay metrics to InfluxDB.
 
 ```sh
 vagrant up --no-provision monitoring
@@ -150,3 +151,26 @@ This package provides the following:
 - [Sensu dashboard](http://192.168.12.10:8080/) with username `admin` and password `secret`
 
 Use `vagrant up app1` to start collecting metrics
+
+### Flume
+
+[Flume](http://flume.apache.org) is a distributed, reliable, and available service for efficiently collecting, aggregating, and moving large amounts of log data. This package provides scripts for using Flume with Elasticsearch and the Syslog and Avro protocols.
+
+```sh
+vagrant up --no-provision monitoring
+vagrant ssh monitoring
+```
+
+```sh
+sudo -i
+cd /vagrant && ./install-all-flume.sh
+```
+
+This package provides the following:
+
+- [Kibana](http://192.168.12.10/kibana/)
+- [ElasticHQ](http://192.168.12.10:9200/_plugin/HQ/)
+- Avro input on `192.168.12.10` at TCP port 41414
+- Syslog input on `192.168.12.10` at TCP port 1514
+
+When using Kibana, you will need to change the index pattern to `[flume-]YYYY-MM-DD`.
