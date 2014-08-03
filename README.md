@@ -196,3 +196,17 @@ This package provides the following:
 - [ElasticHQ](http://192.168.12.10:9200/_plugin/HQ/)
 - HTTP input on `192.168.12.10` at TCP port 9880
 - Syslog input on `192.168.12.10` at TCP port 1514
+
+### Testing Syslog Receivers
+
+To quickly test the functionality of a syslog-compatible receiver, you can use the `logger` command on Ubuntu.
+
+```sh
+message="hello world"
+
+# With TCP syslog receiver
+logger -n localhost -P 1514 $message
+
+# With UDP syslog receiver
+logger -n localhost -P 1514 -d $message
+```
