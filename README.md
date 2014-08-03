@@ -31,9 +31,9 @@ Scripts included in this project must:
 
 This makes it easier for people to solve issues during evaluation, as well as prepare for deploying the applications into staging and production environments.
 
-## Requirements
+## Contributing
 
-For a small infrastructure (~dozen nodes), you need about 2GB memory and 2 cores. If you install the Kale stack, this increases to 4GB memory and 4 cores. For larger infrastructures, or just higher availability, you'll want to start splitting up components to their own nodes.
+Want to add additional scripts? Improve existing scenarios? Just fork it, and submit a pull request. It's that simple.
 
 ## Usage
 
