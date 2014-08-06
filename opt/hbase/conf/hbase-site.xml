@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+  <property>
+    <name>hbase.cluster.distributed</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>hbase.master.wait.on.regionservers.mintostart</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>hbase.rootdir</name>
+    <value>file:///var/lib/hbase</value>
+  </property>
+</configuration>

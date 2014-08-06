@@ -21,6 +21,10 @@ function (Settings) {
         url: 'http://'+window.location.hostname+':8086/db/stats',
         username: 'root',
         password: 'root'
+      },
+      opentsdb: {
+        type: 'opentsdb',
+        url: 'http://'+window.location.hostname+':4242'
       }
     },
 

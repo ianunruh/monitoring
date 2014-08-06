@@ -16,6 +16,7 @@ Currently, the following stacks can be installed.
 - [InfluxDB](http://influxdb.com/)
 - [Flume](http://flume.apache.org/)
 - [Fluentd](http://fluentd.org/)
+- [OpenTSDB](http://opentsdb.net/) and [TCollector](http://opentsdb.net/docs/build/html/user_guide/utilities/tcollector.html)
 
 This repository started off from the ideas on my [Monitoring Everything](http://ianunruh.com/2014/05/monitor-everything.html) blog series.
 
@@ -65,6 +66,34 @@ For client nodes, it provides:
 - Lumberjack receiver (TCP/5043)
 - Graphite line receiver (TCP/2013)
 - Graphite Pickle receiver (TCP/2014)
+
+### OpenTSDB
+
+This package provides scripts to install OpenTSDB and TCollector. OpenTSDB depends on HBase, which is installed in [pseudo-distributed mode](http://hbase.apache.org/book.html#distributed) alongside a [standalone ZooKeeper](http://zookeeper.apache.org/doc/r3.1.2/zookeeperStarted.html#sc_InstallingSingleMode).
+
+```sh
+vagrant up --no-provision monitoring
+vagrant ssh monitoring
+```
+
+```sh
+sudo -i
+cd /vagrant && ./install-all-opentsdb.sh
+```
+
+This script also installs Grafana with the OpenTSDB backend configured. Elasticsearch is installed as a dashboard store for Grafana.
+
+- [Grafana](http://192.168.12.10/grafana)
+- [OpenTSDB dashboard](http://192.168.12.10:4242/)
+
+TCollector is installed on the monitoring host to provide some sample metrics. Note that this script can take more than 10 minutes to install, depending on your bandwidth.
+
+To start collecting metrics from `app1`, simply SSH to it and run the following.
+
+```
+sudo -i
+cd /vagrant && ./install-tcollector.sh
+```
 
 ### Sentry
 
