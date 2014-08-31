@@ -24,7 +24,7 @@ useradd -s /bin/bash -d /opt/uchiwa uchiwa
 git clone git://github.com/palourde/uchiwa.git /opt/uchiwa
 
 cp $BASE_PATH/etc/init/uchiwa.conf /etc/init
-cp $BASE_PATH/opt/uchiwa/config.js /opt/uchiwa
+cp $BASE_PATH/opt/uchiwa/config.json /opt/uchiwa
 
 chown -R uchiwa:uchiwa /opt/uchiwa
 
