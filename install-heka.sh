@@ -7,8 +7,8 @@ BASE_PATH=`pwd`
 
 cd /tmp
 
-curl -OL https://github.com/mozilla-services/heka/releases/download/v0.6.0/heka_0.6.0_amd64.deb
-dpkg -i heka_0.6.0_amd64.deb
+curl -OL https://github.com/mozilla-services/heka/releases/download/v0.7.0/heka_0.7.0_amd64.deb
+dpkg -i heka_0.7.0_amd64.deb
 
 useradd -d /var/cache/hekad -m hekad
 
