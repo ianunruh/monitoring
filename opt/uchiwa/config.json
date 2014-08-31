@@ -1,0 +1,22 @@
+{
+  "sensu": [
+    {
+      "name": "dc1",
+      "host": "192.168.12.10",
+      "port": 4567,
+      "ssl": false,
+      "user": "admin",
+      "pass": "secret",
+      "path": "",
+      "timeout": 5000
+    }
+  ],
+  "uchiwa": {
+    "host": "0.0.0.0",
+    "port": 8010,
+    "user": "admin",
+    "pass": "secret",
+    "refresh": 10000,
+    "dateFormat": "MM/DD/YYYY HH:mm:ss"
+  }
+}
