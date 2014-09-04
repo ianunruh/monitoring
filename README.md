@@ -32,6 +32,11 @@ Scripts included in this project must:
 
 This makes it easier for people to solve issues during evaluation, as well as prepare for deploying the applications into staging and production environments.
 
+I won't accept scripts for the following applications. These applications are either too old or too bloated for cloud monitoring.
+
+- Nagios
+- Zabbix
+
 ## Contributing
 
 Want to add additional scripts? Improve existing scenarios? Just fork it, and submit a pull request. It's that simple.
