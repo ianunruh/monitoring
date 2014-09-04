@@ -26,7 +26,7 @@ $BASE_PATH/configure-rabbitmq-sensu.sh
 $BASE_PATH/install-sensu.sh
 $BASE_PATH/install-sensu-server.sh
 $BASE_PATH/install-sensu-api.sh
-$BASE_PATH/install-sensu-dashboard.sh
+$BASE_PATH/install-uchiwa.sh
 $BASE_PATH/install-sensu-metrics-relay.sh
 $BASE_PATH/configure-sensu-metrics-server.sh
 

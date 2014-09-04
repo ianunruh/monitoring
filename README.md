@@ -4,7 +4,7 @@ Set of scripts for evaluating various monitoring stacks (log aggregation, metric
 
 Currently, the following stacks can be installed.
 
-- [Sensu](http://sensuapp.org/) (including [Uchiwa](https://github.com/palourde/uchiwa) and [Sensu Admin](https://github.com/sensu/sensu-admin) dashboards)
+- [Sensu](http://sensuapp.org/) (including [Uchiwa](https://github.com/palourde/uchiwa))
 - [Flapjack](http://flapjack.io/)
 - [Logstash](http://logstash.net/) (with [Elasticsearch](http://www.elasticsearch.org/overview/elasticsearch/)/[Kibana](http://www.elasticsearch.org/overview/kibana/) and [logstash-forwarder](https://github.com/elasticsearch/logstash-forwarder))
 - Etsy's [Kale](http://codeascraft.com/2013/06/11/introducing-kale/) stack ([Skyline](https://github.com/etsy/skyline) for anomaly detection, [Oculus](https://github.com/etsy/oculus) for correlation)
@@ -59,7 +59,7 @@ The `monitoring` box provides the following:
 - [Skyline](http://192.168.12.10:1500) (best viewed in Chrome)
 - [Oculus](http://192.168.12.10:3000)
 - [Flapjack](http://192.168.12.10:3080)
-- [Sensu dashboard](http://192.168.12.10:8080)
+- [Uchiwa](http://192.168.12.10:8010)
 - [ElasticHQ](http://192.168.12.10:9200/_plugin/HQ)
 
 For client nodes, it provides:
