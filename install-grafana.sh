@@ -15,9 +15,9 @@ BASE_PATH=`pwd`
 
 cd /tmp
 
-curl -O -L http://grafanarel.s3.amazonaws.com/grafana-1.6.1.tar.gz
-tar xf grafana-1.6.1.tar.gz
-cp -R grafana-1.6.1 /usr/share/grafana
+curl -O -L http://grafanarel.s3.amazonaws.com/grafana-1.7.0.tar.gz
+tar xf grafana-1.7.0.tar.gz
+cp -R grafana-1.7.0 /usr/share/grafana
 
 cp $BASE_PATH/usr/share/grafana/config.js /usr/share/grafana
 
