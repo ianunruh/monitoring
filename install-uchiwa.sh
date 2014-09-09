@@ -2,8 +2,6 @@
 ##
 # Installs Uchiwa, a multi-datacenter dashboard for Sensu
 #
-# Configured with the username `admin` and the password `secret`
-#
 # Provides:
 # - HTTP (TCP/8010)
 #
@@ -12,22 +10,12 @@
 ##
 BASE_PATH=`pwd`
 
-add-apt-repository -y ppa:chris-lea/node.js
+curl -s http://repos.sensuapp.org/apt/pubkey.gpg | apt-key add -
+echo "deb http://repos.sensuapp.org/apt sensu main" > /etc/apt/sources.list.d/sensu.list
 
 apt-get update
-apt-get install -y git nodejs
+apt-get install -y uchiwa
 
-npm install -g bower
+cp $BASE_PATH/etc/sensu/uchiwa.json /etc/sensu
 
-useradd -s /bin/bash -d /opt/uchiwa uchiwa
-
-git clone git://github.com/palourde/uchiwa.git /opt/uchiwa
-
-cp $BASE_PATH/etc/init/uchiwa.conf /etc/init
-cp $BASE_PATH/opt/uchiwa/config.json /opt/uchiwa
-
-chown -R uchiwa:uchiwa /opt/uchiwa
-
-sudo -i -u uchiwa npm install
-
-start uchiwa
+service uchiwa restart
