@@ -1,18 +1,30 @@
-from raven import Client
+#!/usr/bin/env python
+from argparse import ArgumentParser
 import random
 import time
 
-client = Client('YOUR_DSN_GOES_HERE')
+from raven import Client
 
-exceptions = (RuntimeError, NotImplementedError, ZeroDivisionError)
+def main():
+    parser = ArgumentParser()
+    parser.add_argument('dsn')
 
-while True:
-    exception = random.choice(exceptions)
-    print exception
+    args = parser.parse_args()
 
-    try:
-        raise exception
-    except:
-        client.captureException()
+    client = Client(args.dsn)
 
-    time.sleep(random.random())
+    exceptions = (RuntimeError, NotImplementedError, ZeroDivisionError)
+
+    while True:
+        exception = random.choice(exceptions)
+        print exception
+
+        try:
+            raise exception
+        except:
+            client.captureException()
+
+        time.sleep(random.random())
+
+if __name__ == '__main__':
+    main()
