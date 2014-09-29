@@ -26,9 +26,9 @@ apt-get install -yq openjdk-7-jre-headless
 # Install Flume
 cd /tmp
 
-curl -sOL http://apache.osuosl.org/flume/1.5.0/apache-flume-1.5.0-bin.tar.gz
-tar xf apache-flume-1.5.0-bin.tar.gz
-mv apache-flume-1.5.0-bin /opt/flume
+curl -sOL http://apache.osuosl.org/flume/${FLUME_VERSION}/apache-flume-${FLUME_VERSION}-bin.tar.gz
+tar xf apache-flume-${FLUME_VERSION}-bin.tar.gz
+mv apache-flume-${FLUME_VERSION}-bin /opt/flume
 
 # Copy libraries necessary for the Elasticsearch sink
 cp /usr/share/elasticsearch/lib/lucene-* /opt/flume/lib

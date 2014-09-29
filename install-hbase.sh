@@ -23,9 +23,9 @@ apt-get install -yq openjdk-7-jre-headless supervisor
 # Install HBase
 cd /tmp
 
-curl -sOL http://apache.osuosl.org/hbase/hbase-0.98.5/hbase-0.98.5-hadoop2-bin.tar.gz
-tar xf hbase-0.98.5-hadoop2-bin.tar.gz
-mv hbase-0.98.5-hadoop2 /opt/hbase
+curl -sOL http://apache.osuosl.org/hbase/hbase-${HBASE_VERSION}/hbase-${HBASE_VERSION}-hadoop2-bin.tar.gz
+tar xf hbase-${HBASE_VERSION}-hadoop2-bin.tar.gz
+mv hbase-${HBASE_VERSION}-hadoop2 /opt/hbase
 
 # Configure HBase
 cp $BASE_PATH/opt/hbase/conf/* $HBASE_PREFIX/conf

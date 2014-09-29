@@ -21,9 +21,9 @@ useradd -s /bin/false -d /var/lib/graylog2 -m graylog2
 mkdir -p /var/log/graylog2
 chown graylog2:graylog2 /var/log/graylog2
 
-curl -sOL https://github.com/Graylog2/graylog2-web-interface/releases/download/0.20.6/graylog2-web-interface-0.20.6.tgz
-tar xf graylog2-web-interface-0.20.6.tgz
-cp -R graylog2-web-interface-0.20.6 /usr/share/graylog2-web-interface
+curl -sOL https://github.com/Graylog2/graylog2-web-interface/releases/download/${GRAYLOG_VERSION}/graylog2-web-interface-${GRAYLOG_VERSION}.tgz
+tar xf graylog2-web-interface-${GRAYLOG_VERSION}.tgz
+cp -R graylog2-web-interface-${GRAYLOG_VERSION} /usr/share/graylog2-web-interface
 
 mkdir -p /etc/graylog2
 

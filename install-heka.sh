@@ -9,8 +9,8 @@ source env.sh
 
 cd /tmp
 
-curl -sOL https://github.com/mozilla-services/heka/releases/download/v0.7.1/heka_0.7.1_amd64.deb
-dpkg -i heka_0.7.1_amd64.deb
+curl -sOL https://github.com/mozilla-services/heka/releases/download/v${HEKA_VERSION}/heka_${HEKA_VERSION}_amd64.deb
+dpkg -i heka_${HEKA_VERSION}_amd64.deb
 
 useradd -d /var/cache/hekad -m hekad
 

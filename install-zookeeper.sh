@@ -18,9 +18,9 @@ apt-get install -yq openjdk-7-jre-headless supervisor
 # Install Zookeeper
 cd /tmp
 
-curl -sOL http://apache.osuosl.org/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz
-tar xf zookeeper-3.4.6.tar.gz
-mv zookeeper-3.4.6 $ZOOKEEPER_PREFIX
+curl -sOL http://apache.osuosl.org/zookeeper/zookeeper-${ZK_VERSION}/zookeeper-${ZK_VERSION}.tar.gz
+tar xf zookeeper-${ZK_VERSION}.tar.gz
+mv zookeeper-${ZK_VERSION} $ZOOKEEPER_PREFIX
 
 # Configure Zookeeper
 cp $BASE_PATH/opt/zookeeper/conf/* $ZOOKEEPER_PREFIX/conf

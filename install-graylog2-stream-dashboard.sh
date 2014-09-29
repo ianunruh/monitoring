@@ -16,9 +16,9 @@ source env.sh
 
 cd /tmp
 
-curl -sOL https://github.com/Graylog2/graylog2-stream-dashboard/releases/download/0.90/graylog2-stream-dashboard-0.90.0.tgz
-tar xf graylog2-stream-dashboard-0.90.0.tgz
-cp -R graylog2-stream-dashboard-0.90.0 /usr/share/graylog2-stream-dashboard
+curl -sOL https://github.com/Graylog2/graylog2-stream-dashboard/releases/download/0.90/graylog2-stream-dashboard-${GRAYLOG_STREAM_DASHBOARD_VERSION}.tgz
+tar xf graylog2-stream-dashboard-${GRAYLOG_STREAM_DASHBOARD_VERSION}.tgz
+cp -R graylog2-stream-dashboard-${GRAYLOG_STREAM_DASHBOARD_VERSION} /usr/share/graylog2-stream-dashboard
 
 apt-get install -yq apache2
 

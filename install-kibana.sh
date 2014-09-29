@@ -16,9 +16,9 @@ source env.sh
 
 cd /tmp
 
-curl -sOL https://download.elasticsearch.org/kibana/kibana/kibana-3.1.0.tar.gz
-tar xf kibana-3.1.0.tar.gz
-cp -R kibana-3.1.0 /usr/share/kibana
+curl -sOL https://download.elasticsearch.org/kibana/kibana/kibana-${KIBANA_VERSION}.tar.gz
+tar xf kibana-${KIBANA_VERSION}.tar.gz
+cp -R kibana-${KIBANA_VERSION} /usr/share/kibana
 
 cp $BASE_PATH/usr/share/kibana/config.js /usr/share/kibana
 

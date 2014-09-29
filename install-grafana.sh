@@ -17,9 +17,9 @@ source env.sh
 
 cd /tmp
 
-curl -sOL http://grafanarel.s3.amazonaws.com/grafana-1.7.0.tar.gz
-tar xf grafana-1.7.0.tar.gz
-cp -R grafana-1.7.0 /usr/share/grafana
+curl -sOL http://grafanarel.s3.amazonaws.com/grafana-${GRAFANA_VERSION}.tar.gz
+tar xf grafana-${GRAFANA_VERSION}.tar.gz
+cp -R grafana-${GRAFANA_VERSION} /usr/share/grafana
 
 cp $BASE_PATH/usr/share/grafana/config.js /usr/share/grafana
 
