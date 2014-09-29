@@ -58,9 +58,22 @@ function (Settings) {
     // Example: '1m', '1h'
     playlist_timespan: '1m',
 
-    // Add your own custom pannels
+    // If you want to specify password before saving, please specify it bellow
+    // The purpose of this password is not security, but to stop some users from accidentally changing dashboards
+    admin: {
+      password: ''
+    },
+
+    // Change window title prefix from 'Grafana - <dashboard title>'
+    window_title_prefix: 'Grafana - ',
+
+    // Add your own custom panels
     plugins: {
-      panels: []
+      // list of plugin panels
+      panels: [],
+      // requirejs modules in plugins folder that should be loaded
+      // for example custom datasources
+      dependencies: [],
     }
 
   });
