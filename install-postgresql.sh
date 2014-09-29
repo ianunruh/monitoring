@@ -5,5 +5,7 @@
 # Provides:
 # - PostgreSQL (TCP/5432)
 ##
-apt-get update
-apt-get install -y postgresql
+set -eux
+
+apt-get update -q
+apt-get install -yq postgresql

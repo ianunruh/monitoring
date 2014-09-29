@@ -10,15 +10,17 @@
 # Dependencies:
 # - Graylog2 server with CORS enabled
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 cd /tmp
 
-curl -O -L https://github.com/Graylog2/graylog2-stream-dashboard/releases/download/0.90/graylog2-stream-dashboard-0.90.0.tgz
+curl -sOL https://github.com/Graylog2/graylog2-stream-dashboard/releases/download/0.90/graylog2-stream-dashboard-0.90.0.tgz
 tar xf graylog2-stream-dashboard-0.90.0.tgz
 cp -R graylog2-stream-dashboard-0.90.0 /usr/share/graylog2-stream-dashboard
 
-apt-get install -y apache2
+apt-get install -yq apache2
 
 cp $BASE_PATH/etc/apache2/sites-enabled/graylog2-stream-dashboard.conf /etc/apache2/sites-enabled
 service apache2 restart

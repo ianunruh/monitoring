@@ -2,7 +2,9 @@
 ##
 # Installs Logstash forwarder and the Sensu client
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 $BASE_PATH/install-logstash-forwarder.sh
 

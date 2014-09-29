@@ -6,12 +6,14 @@
 # - Metric receiver (UDP/8125)
 # - Management interface (TCP/8126)
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 add-apt-repository -y ppa:chris-lea/node.js
 
-apt-get update
-apt-get install -y git nodejs
+apt-get update -q
+apt-get install -yq git nodejs
 
 useradd -s /bin/false -d /var/lib/statsd -m statsd
 

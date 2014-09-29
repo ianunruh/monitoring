@@ -5,5 +5,7 @@
 # Dependencies:
 # - Elasticsearch (1.x)
 ##
-apt-get install -y python-pip
+set -eux
+
+apt-get install -yq python-pip
 pip install elasticsearch-curator

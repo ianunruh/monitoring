@@ -2,7 +2,9 @@
 ##
 # Installs the Graylog2 stack
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 $BASE_PATH/install-elasticsearch-old.sh
 $BASE_PATH/install-mongo.sh

@@ -5,9 +5,11 @@
 # Dependencies:
 # - OpenTSDB (HTTP/4242)
 ##
-BASE_PATH=`pwd`
+set -eux
 
-apt-get install -y git supervisor
+source env.sh
+
+apt-get install -yq git supervisor
 
 git clone git://github.com/OpenTSDB/tcollector.git /opt/tcollector
 

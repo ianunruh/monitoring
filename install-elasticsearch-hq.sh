@@ -5,4 +5,6 @@
 # Dependencies:
 # - Elasticsearch (any version)
 ##
-cd /usr/share/elasticsearch && bin/plugin -install royrusso/elasticsearch-HQ
+set -eux
+
+cd /usr/share/elasticsearch && bin/plugin -s --install royrusso/elasticsearch-HQ

@@ -8,7 +8,9 @@
 # - Redis
 # - SSL certificates generated with `generate-sensu-ssl.sh`
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 SSL_PATH=$BASE_PATH/build/ssl_certs
 
 cp $BASE_PATH/etc/sensu/conf.d/redis.json /etc/sensu/conf.d

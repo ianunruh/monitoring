@@ -6,7 +6,9 @@
 # - Redis provided for Flapjack
 # - Sensu server
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 cd /tmp
 

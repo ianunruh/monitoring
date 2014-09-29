@@ -2,7 +2,9 @@
 ##
 # Installs Sentry and friends
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 $BASE_PATH/install-memcached.sh
 $BASE_PATH/install-postgresql.sh

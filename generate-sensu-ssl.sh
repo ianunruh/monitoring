@@ -2,10 +2,12 @@
 ##
 # Generates certificates for RabbitMQ brokers and clients
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 BUILD_PATH=$BASE_PATH/build
 
-mkdir $BUILD_PATH
+mkdir -p $BUILD_PATH
 cd $BUILD_PATH
 
 curl -O http://sensuapp.org/docs/0.12/tools/ssl_certs.tar

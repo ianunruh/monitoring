@@ -12,12 +12,14 @@
 # - PostgreSQL (TCP/5432)
 # - Redis (TCP/6379)
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 SENTRY_PATH=/usr/share/sentry
 SENTRY_CONFIG=/etc/sentry/settings.py
 
-apt-get update
-apt-get install -y python-pip python-dev libxml2-dev libxslt1-dev libpq-dev supervisor
+apt-get update -q
+apt-get install -yq python-pip python-dev libxml2-dev libxslt1-dev libpq-dev supervisor
 
 pip install virtualenv
 
@@ -33,8 +35,8 @@ EOF
 
 mkdir -p /etc/sentry
 
-cp $BASE_PATH$SENTRY_PATH/initial_data.json $SENTRY_PATH
-cp $BASE_PATH$SENTRY_CONFIG $SENTRY_CONFIG
+cp $BASE_PATH/usr/share/sentry/initial_data.json $SENTRY_PATH
+cp $BASE_PATH/etc/sentry/settings.py /etc/sentry
 
 sentry --config=$SENTRY_CONFIG upgrade --noinput
 

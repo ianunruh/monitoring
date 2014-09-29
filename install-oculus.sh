@@ -9,14 +9,16 @@
 # - Elasticsearch (0.90.x)
 # - Redis
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 useradd -b /opt oculus
 
 mkdir -p /var/log/oculus
 chown oculus:oculus /var/log/oculus
 
-apt-get install -y ruby ruby-dev build-essential git openjdk-7-jdk libxml2-dev libxslt1-dev
+apt-get install -yq ruby ruby-dev build-essential git openjdk-7-jdk libxml2-dev libxslt1-dev
 
 gem install rake bundler --no-ri --no-rdoc
 

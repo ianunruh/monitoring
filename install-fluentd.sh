@@ -6,10 +6,12 @@
 # - Syslog TCP receiver (TCP/1514)
 # - HTTP receiver (TCP/9880)
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 # Install Ruby and the Fluentd gem
-apt-get install -y ruby ruby-dev libcurl4-openssl-dev
+apt-get install -yq ruby ruby-dev libcurl4-openssl-dev
 gem install fluentd fluent-plugin-elasticsearch --no-ri --no-rdoc
 
 # Prepare user and directories

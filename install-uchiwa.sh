@@ -8,13 +8,15 @@
 # Dependencies:
 # - Sensu API
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 curl -s http://repos.sensuapp.org/apt/pubkey.gpg | apt-key add -
 echo "deb http://repos.sensuapp.org/apt sensu main" > /etc/apt/sources.list.d/sensu.list
 
-apt-get update
-apt-get install -y uchiwa
+apt-get update -q
+apt-get install -yq uchiwa
 
 cp $BASE_PATH/etc/sensu/uchiwa.json /etc/sensu
 

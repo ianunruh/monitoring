@@ -5,12 +5,14 @@
 # Provides:
 # - Metric proxy (UDP/8125)
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 add-apt-repository -y ppa:chris-lea/node.js
 
-apt-get update
-apt-get install -y build-essential git nodejs
+apt-get update -q
+apt-get install -yq build-essential git nodejs
 
 useradd -s /bin/false -d /var/lib/statsd -m statsd
 

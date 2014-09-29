@@ -12,9 +12,11 @@
 # Dependencies:
 # - Carbon
 ##
-BASE_PATH=`pwd`
+set -eux
 
-apt-get install -y graphite-web apache2 apache2-mpm-worker libapache2-mod-wsgi
+source env.sh
+
+apt-get install -yq graphite-web apache2 apache2-mpm-worker libapache2-mod-wsgi
 
 chown _graphite /var/lib/graphite
 sudo -u _graphite graphite-manage syncdb --noinput

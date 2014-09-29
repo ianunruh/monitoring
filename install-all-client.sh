@@ -2,7 +2,9 @@
 ##
 # Installs clients for Logstash and Sensu
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 $BASE_PATH/install-logstash.sh
 $BASE_PATH/configure-logstash-shipper.sh

@@ -2,7 +2,9 @@
 ##
 # Installs the Flume/Elasticsearch/Kibana stack
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 $BASE_PATH/install-elasticsearch.sh
 $BASE_PATH/install-elasticsearch-hq.sh

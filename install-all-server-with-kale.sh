@@ -5,7 +5,9 @@
 # Oculus requires the 0.90.x branch of Elasticsearch, so this script must be run instead of the
 # `install-all-server.sh` script.
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 $BASE_PATH/clean.sh
 $BASE_PATH/generate-lumberjack-ssl.sh

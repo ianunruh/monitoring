@@ -11,7 +11,9 @@
 # - Redis
 # - SSL certificate generated with `generate-lumberjack-ssl.sh`
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 BUILD_PATH=$BASE_PATH/build
 
 cp $BASE_PATH/etc/logstash/conf.d/10-input-lumberjack.conf /etc/logstash/conf.d

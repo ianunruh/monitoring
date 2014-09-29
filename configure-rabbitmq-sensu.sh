@@ -9,7 +9,9 @@
 # - RabbitMQ
 # - SSL certificates generated with `generate-sensu-ssl.sh`
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 SSL_PATH=$BASE_PATH/build/ssl_certs
 
 cp $BASE_PATH/etc/rabbitmq/rabbitmq.config /etc/rabbitmq
@@ -22,6 +24,6 @@ cp $SSL_PATH/sensu_ca/cacert.pem /etc/rabbitmq/ssl
 
 service rabbitmq-server restart
 
-rabbitmqctl add_vhost /sensu
+rabbitmqctl add_vhost sensu
 rabbitmqctl add_user sensu monit0r
-rabbitmqctl set_permissions -p /sensu sensu ".*" ".*" ".*"
+rabbitmqctl set_permissions -p sensu sensu ".*" ".*" ".*"

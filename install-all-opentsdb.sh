@@ -1,5 +1,7 @@
 #!/bin/bash
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 $BASE_PATH/install-zookeeper.sh
 $BASE_PATH/install-hbase.sh

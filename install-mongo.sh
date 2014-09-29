@@ -5,8 +5,10 @@
 # Provides:
 # - Query interface (TCP/27017)
 ##
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+set -eux
+
+apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
 echo "deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen" > /etc/apt/sources.list.d/mongodb.list
 
-apt-get update
-apt-get install -y mongodb-org-server mongodb-org-shell
+apt-get update -q
+apt-get install -yq mongodb-org-server mongodb-org-shell

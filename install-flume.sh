@@ -9,7 +9,9 @@
 # Dependencies:
 # - Elasticsearch
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 # Prepare user and directories
 useradd -d /opt/flume -M flume
@@ -18,13 +20,13 @@ mkdir -p /etc/flume/conf.d /var/lib/flume /var/log/flume
 chown flume:flume /var/lib/flume /var/log/flume
 
 # Install Java runtime
-apt-get update
-apt-get install -y openjdk-7-jre-headless
+apt-get update -q
+apt-get install -yq openjdk-7-jre-headless
 
 # Install Flume
 cd /tmp
 
-curl -OL http://apache.osuosl.org/flume/1.5.0/apache-flume-1.5.0-bin.tar.gz
+curl -sOL http://apache.osuosl.org/flume/1.5.0/apache-flume-1.5.0-bin.tar.gz
 tar xf apache-flume-1.5.0-bin.tar.gz
 mv apache-flume-1.5.0-bin /opt/flume
 

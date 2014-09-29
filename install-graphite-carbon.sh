@@ -8,11 +8,13 @@
 # - Line receiver (TCP/2013)
 # - Pickle receiver (TCP/2014)
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 export DEBIAN_FRONTEND=noninteractive
 
-apt-get install -y graphite-carbon
+apt-get install -yq graphite-carbon
 
 cp $BASE_PATH/etc/carbon/relay-rules.conf /etc/carbon
 cp $BASE_PATH/etc/carbon/storage-schema.conf /etc/carbon

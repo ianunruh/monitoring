@@ -6,11 +6,13 @@
 # - InfluxDB HTTP API (TCP/8086)
 # - Sensu server
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 export PATH=/opt/sensu/embedded/bin:$PATH
 
-apt-get install -y git
+apt-get install -yq git
 gem install influxdb --no-ri --no-rdoc
 
 cd /tmp

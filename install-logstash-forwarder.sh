@@ -6,12 +6,14 @@
 # - Lumberjack receiver (TCP/5043 on 192.168.12.10)
 # - SSL certificate generated with `generate-lumberjack-ssl.sh`
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 BUILD_PATH=$BASE_PATH/build
 
 cd /tmp
 
-apt-get install -y git golang
+apt-get install -yq git golang
 
 git clone git://github.com/elasticsearch/logstash-forwarder.git
 cd logstash-forwarder

@@ -9,7 +9,9 @@
 # - Omnibus package for Sensu
 # - Redis
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 cp $BASE_PATH/etc/sensu/conf.d/api.json /etc/sensu/conf.d
 cp $BASE_PATH/etc/sensu/conf.d/redis.json /etc/sensu/conf.d

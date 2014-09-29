@@ -10,17 +10,19 @@
 # Dependencies:
 # - Elasticsearch (any version)
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 cd /tmp
 
-curl -O -L https://download.elasticsearch.org/kibana/kibana/kibana-3.1.0.tar.gz
+curl -sOL https://download.elasticsearch.org/kibana/kibana/kibana-3.1.0.tar.gz
 tar xf kibana-3.1.0.tar.gz
 cp -R kibana-3.1.0 /usr/share/kibana
 
 cp $BASE_PATH/usr/share/kibana/config.js /usr/share/kibana
 
-apt-get install -y apache2
+apt-get install -yq apache2
 
 cp $BASE_PATH/etc/apache2/sites-enabled/kibana.conf /etc/apache2/sites-enabled
 service apache2 restart

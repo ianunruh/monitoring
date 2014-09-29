@@ -8,11 +8,13 @@
 # - Raft (TCP/8090)
 # - Replication (TCP/8099)
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 cd /tmp
 
-curl -O -L http://s3.amazonaws.com/influxdb/influxdb_latest_amd64.deb
+curl -sOL http://s3.amazonaws.com/influxdb/influxdb_latest_amd64.deb
 dpkg -i influxdb_latest_amd64.deb
 
 service influxdb start

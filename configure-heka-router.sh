@@ -12,7 +12,9 @@
 # - Heka
 # - Elasticsearch
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 cp $BASE_PATH/etc/hekad/conf.d/10-input-tcp.toml /etc/hekad/conf.d
 cp $BASE_PATH/etc/hekad/conf.d/90-output-dashboard.toml /etc/hekad/conf.d

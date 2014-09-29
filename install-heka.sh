@@ -3,11 +3,13 @@
 # Installs Heka, a tool from Mozilla for high-performance data gathering, analysis,
 # monitoring and reporting.
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 cd /tmp
 
-curl -OL https://github.com/mozilla-services/heka/releases/download/v0.7.1/heka_0.7.1_amd64.deb
+curl -sOL https://github.com/mozilla-services/heka/releases/download/v0.7.1/heka_0.7.1_amd64.deb
 dpkg -i heka_0.7.1_amd64.deb
 
 useradd -d /var/cache/hekad -m hekad

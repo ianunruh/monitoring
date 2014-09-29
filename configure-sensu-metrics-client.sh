@@ -2,9 +2,11 @@
 ##
 # Installs Sensu check plugins for common metrics
 ##
+set -eux
+
 cd /tmp
 
-apt-get install -y git ruby ruby-dev build-essential sysstat
+apt-get install -yq git ruby ruby-dev build-essential sysstat
 
 gem install sensu-plugin --no-ri --no-rdoc
 

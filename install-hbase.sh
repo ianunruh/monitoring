@@ -10,18 +10,20 @@
 # Dependencies:
 # - ZooKeeper (TCP/2181)
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 HBASE_PREFIX=/opt/hbase
 
 useradd -d /var/lib/hbase -s /bin/bash -m hbase
 
 # Install dependencies
-apt-get install -y openjdk-7-jre-headless supervisor
+apt-get install -yq openjdk-7-jre-headless supervisor
 
 # Install HBase
 cd /tmp
 
-curl -OL http://apache.osuosl.org/hbase/hbase-0.98.5/hbase-0.98.5-hadoop2-bin.tar.gz
+curl -sOL http://apache.osuosl.org/hbase/hbase-0.98.5/hbase-0.98.5-hadoop2-bin.tar.gz
 tar xf hbase-0.98.5-hadoop2-bin.tar.gz
 mv hbase-0.98.5-hadoop2 /opt/hbase
 

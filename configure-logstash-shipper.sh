@@ -6,7 +6,9 @@
 # - Logstash
 # - Redis server (TCP/6379 on 192.168.12.10)
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 cp $BASE_PATH/etc/logstash/conf.d/10-input-file-sensu.conf /etc/logstash/conf.d
 cp $BASE_PATH/etc/logstash/conf.d/10-input-file-syslog.conf /etc/logstash/conf.d

@@ -9,13 +9,15 @@
 # - HTTP alert gateway (TCP/3080)
 # - Redis (TCP/6380)
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 apt-key adv --keyserver keys.gnupg.net --recv 803709B6
 echo "deb http://packages.flapjack.io/deb/v1 trusty main" > /etc/apt/sources.list.d/flapjack.list
 
-apt-get update
-apt-get install -y flapjack
+apt-get update -q
+apt-get install -yq flapjack
 
 cp $BASE_PATH/etc/flapjack/flapjack_config.yaml /etc/flapjack
 

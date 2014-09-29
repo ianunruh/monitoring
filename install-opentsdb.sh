@@ -9,12 +9,12 @@
 # - HBase (TCP/9000)
 # - ZooKeeper (TCP/2181)
 ##
-BASE_PATH=`pwd`
+set -eux
 
-set -eu
+source env.sh
 
 # Install dependencies
-apt-get install -y git openjdk-7-jdk autoconf
+apt-get install -yq git openjdk-7-jdk autoconf
 
 # Install OpenTSDB
 cd /tmp

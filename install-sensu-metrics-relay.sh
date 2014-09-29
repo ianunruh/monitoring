@@ -6,9 +6,11 @@
 # - Graphite plaintext receiver (TCP/2013)
 # - Sensu server
 ##
-BASE_PATH=`pwd`
+set -eux
 
-apt-get install -y git
+source env.sh
+
+apt-get install -yq git
 
 cd /tmp
 

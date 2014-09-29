@@ -2,7 +2,9 @@
 ##
 # Installs the Logstash and Sensu/Graphite stacks
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 $BASE_PATH/clean.sh
 $BASE_PATH/generate-lumberjack-ssl.sh

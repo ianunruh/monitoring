@@ -8,9 +8,11 @@
 # Dependencies:
 # - Graylog2 server
 ##
-BASE_PATH=`pwd`
+set -eux
 
-apt-get install -y openjdk-7-jre-headless
+source env.sh
+
+apt-get install -yq openjdk-7-jre-headless
 
 cd /tmp
 
@@ -19,7 +21,7 @@ useradd -s /bin/false -d /var/lib/graylog2 -m graylog2
 mkdir -p /var/log/graylog2
 chown graylog2:graylog2 /var/log/graylog2
 
-curl -O -L https://github.com/Graylog2/graylog2-web-interface/releases/download/0.20.6/graylog2-web-interface-0.20.6.tgz
+curl -sOL https://github.com/Graylog2/graylog2-web-interface/releases/download/0.20.6/graylog2-web-interface-0.20.6.tgz
 tar xf graylog2-web-interface-0.20.6.tgz
 cp -R graylog2-web-interface-0.20.6 /usr/share/graylog2-web-interface
 

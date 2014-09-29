@@ -5,18 +5,20 @@
 # Provides:
 # - ZooKeeper RPC (TCP/2181)
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 ZOOKEEPER_PREFIX=/opt/zookeeper
 
 useradd -d /var/lib/zookeeper -s /bin/bash -m zookeeper
 
 # Install dependencies
-apt-get install -y openjdk-7-jre-headless supervisor
+apt-get install -yq openjdk-7-jre-headless supervisor
 
 # Install Zookeeper
 cd /tmp
 
-curl -OL http://apache.osuosl.org/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz
+curl -sOL http://apache.osuosl.org/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz
 tar xf zookeeper-3.4.6.tar.gz
 mv zookeeper-3.4.6 $ZOOKEEPER_PREFIX
 

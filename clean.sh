@@ -2,6 +2,8 @@
 ##
 # Cleans up any generated files (such as SSL certificates)
 ##
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 rm -rf $BASE_PATH/build

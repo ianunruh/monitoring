@@ -1,5 +1,7 @@
 #!/bin/bash
-BASE_PATH=`pwd`
+set -eux
+
+source env.sh
 
 $BASE_PATH/clean.sh
 $BASE_PATH/generate-sensu-ssl.sh
