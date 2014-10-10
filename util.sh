@@ -4,7 +4,7 @@ function with_retry {
   local max_attempts=5
   local timeout=3
 
-  while [[ $attempt < $max_attempts ]]; do
+  while [[ $attempts < $max_attempts ]]; do
     "$@"
 
     if [[ $? == 0 ]]; then
@@ -12,6 +12,6 @@ function with_retry {
     fi
 
     sleep $timeout
-    attempt=$((attempt + 1))
+    attempts=$((attempts + 1))
   done
 }
