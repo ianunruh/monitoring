@@ -183,7 +183,7 @@ This package provides the following:
 
 - [Grafana](http://192.168.12.10/grafana) configured for InfluxDB
 - [InfluxDB admin interface](http://192.168.12.10:8083/) with default credentials
-- [Sensu dashboard](http://192.168.12.10:8080/) with username `admin` and password `secret`
+- [Uchiwa](http://192.168.12.10:8010) dashboard for Sensu
 
 Use `vagrant up app1` to start collecting metrics
 
