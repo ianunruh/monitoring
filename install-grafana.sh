@@ -14,14 +14,21 @@
 set -eux
 
 source env.sh
-
+GRAF_BASE_URL=http://grafanarel.s3.amazonaws.com
+GRAF_TAR=grafana-${GRAFANA_VERSION}.tar.gz
+GRAF_INST_PATH=/usr/share/grafana
+	
 cd /tmp
 
-curl -sOL http://grafanarel.s3.amazonaws.com/grafana-${GRAFANA_VERSION}.tar.gz
-tar xf grafana-${GRAFANA_VERSION}.tar.gz
-cp -R grafana-${GRAFANA_VERSION} /usr/share/grafana
+sudo mkdir -p $GRAF_INST_PATH 
+if [ "x$USE_CACHE" == "xtrue" ]; then
+	if [ ! -e $REPOS_PATH/$GRAF_TAR ]; then wget -P $REPOS_PATH $GRAF_BASE_URL/$GRAF_TAR; fi
+	sudo tar --strip-components=1 -xzvf $REPOS_PATH/$GRAF_TAR -C $GRAF_INST_PATH &> grafana.log
+else
+	curl $GRAF_BASE_URL/$GRAF_TAR | sudo tar --strip-components=1 -xzv -C $GRAF_INST_PATH &> grafana.log
+fi
 
-cp $BASE_PATH/usr/share/grafana/config.js /usr/share/grafana
+cp $BASE_PATH/usr/share/grafana/config.js $GRAF_INST_PATH
 
 apt-get install -yq apache2
 

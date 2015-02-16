@@ -1,5 +1,7 @@
 #!/bin/bash
 BASE_PATH=$(pwd)
+REPOS_PATH=$BASE_PATH/repos
+USE_CACHE=true #should we keep file in repos ?
 
 export DEBIAN_FRONTEND=noninteractive
 

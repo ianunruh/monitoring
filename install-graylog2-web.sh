@@ -11,7 +11,10 @@
 set -eux
 
 source env.sh
-
+GRAY2_BASE_URL=https://github.com/Graylog2/graylog2-web-interface/releases/download/${GRAYLOG_VERSION}
+GRAY2_TAR=graylog2-web-interface-${GRAYLOG_VERSION}.tgz
+GRAY2_INST_PATH=/usr/share/graylog2-web-interface
+	
 apt-get install -yq openjdk-7-jre-headless
 
 cd /tmp
@@ -21,9 +24,13 @@ useradd -s /bin/false -d /var/lib/graylog2 -m graylog2
 mkdir -p /var/log/graylog2
 chown graylog2:graylog2 /var/log/graylog2
 
-curl -sOL https://github.com/Graylog2/graylog2-web-interface/releases/download/${GRAYLOG_VERSION}/graylog2-web-interface-${GRAYLOG_VERSION}.tgz
-tar xf graylog2-web-interface-${GRAYLOG_VERSION}.tgz
-cp -R graylog2-web-interface-${GRAYLOG_VERSION} /usr/share/graylog2-web-interface
+mkdir -p $GRAY2_INST_PATH 
+if [ "x$USE_CACHE" == "xtrue" ]; then
+	if [ ! -e $REPOS_PATH/$GRAY2_TAR ]; then wget -P $REPOS_PATH $GRAY2_BASE_URL/$GRAY2_TAR; fi
+	tar --strip-components=1 -xzvf $REPOS_PATH/$GRAY2_TAR -C $GRAY2_INST_PATH &> gray2.log
+else
+	curl $GRAY2_BASE_URL/$GRAY2_TAR | tar --strip-components=1 -xzv -C $GRAY2_INST_PATH &> gray2.log
+fi
 
 mkdir -p /etc/graylog2
 
