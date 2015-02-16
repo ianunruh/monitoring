@@ -12,9 +12,12 @@
 set -eux
 
 source env.sh
-
+FLUME_BASE_URL=http://apache.osuosl.org/flume
+FLUME_TAR=apache-flume-${FLUME_VERSION}-bin.tar.gz
+FLUME_INST_PATH=/opt/flume
+	
 # Prepare user and directories
-useradd -d /opt/flume -M flume
+useradd -d $FLUME_INST_PATH -M flume
 
 mkdir -p /etc/flume/conf.d /var/lib/flume /var/log/flume
 chown flume:flume /var/lib/flume /var/log/flume
@@ -25,14 +28,17 @@ apt-get install -yq openjdk-7-jre-headless
 
 # Install Flume
 cd /tmp
-
-curl -sOL http://apache.osuosl.org/flume/${FLUME_VERSION}/apache-flume-${FLUME_VERSION}-bin.tar.gz
-tar xf apache-flume-${FLUME_VERSION}-bin.tar.gz
-mv apache-flume-${FLUME_VERSION}-bin /opt/flume
+sudo mkdir -p $FLUME_INST_PATH 
+if [ "x$USE_CACHE" == "xtrue" ]; then
+	if [ ! -e $REPOS_PATH/$FLUME_TAR ]; then wget -P $REPOS_PATH $FLUME_BASE_URL/$FLUME_TAR; fi
+	sudo tar --strip-components=1 -xzvf $REPOS_PATH/$FLUME_TAR -C $FLUME_INST_PATH &> flume.log
+else
+	curl $FLUME_BASE_URL/$FLUME_TAR | sudo tar --strip-components=1 -xzv -C $FLUME_INST_PATH &> flume.log
+fi
 
 # Copy libraries necessary for the Elasticsearch sink
-cp /usr/share/elasticsearch/lib/lucene-* /opt/flume/lib
-cp /usr/share/elasticsearch/lib/elasticsearch-* /opt/flume/lib
+cp /usr/share/elasticsearch/lib/lucene-* $FLUME_INST_PATH/lib
+cp /usr/share/elasticsearch/lib/elasticsearch-* $FLUME_INST_PATH/lib
 
 # Configure Flume
 cp $BASE_PATH/etc/flume/* /etc/flume

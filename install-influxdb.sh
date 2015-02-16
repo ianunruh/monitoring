@@ -11,11 +11,17 @@
 set -eux
 
 source env.sh
+INFLUX_BASE_URL=http://s3.amazonaws.com/influxdb/
+INFLUX_DEB=influxdb_latest_amd64.deb
 
 cd /tmp
-
-curl -sOL http://s3.amazonaws.com/influxdb/influxdb_latest_amd64.deb
-dpkg -i influxdb_latest_amd64.deb
+if [ "x$USE_CACHE" == "xtrue" ]; then
+	if [ ! -e $REPOS_PATH/$INFLUX_DEB ]; then wget -P $REPOS_PATH $INFLUX_BASE_URL/$INFLUX_DEB; fi
+	dpkg -i $REPOS_PATH/$INFLUX_DEB
+else
+	curl -sOL $INFLUX_BASE_URL/$INFLUX_DEB
+	dpkg -i $INFLUX_DEB
+fi
 
 service influxdb start
 

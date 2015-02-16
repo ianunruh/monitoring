@@ -21,10 +21,14 @@ SENTRY_CONFIG=/etc/sentry/settings.py
 apt-get update -q
 apt-get install -yq python-pip python-dev libxml2-dev libxslt1-dev libpq-dev supervisor
 
+
 pip install virtualenv
+if [ -e ~/.pydistutils.cfg ]; then mv  ~/.pydistutils.cfg ~/.pydistutils.cfg.bak; fi
 
 virtualenv $SENTRY_PATH
+set +o nounset #https://github.com/pypa/virtualenv/issues/150
 source $SENTRY_PATH/bin/activate
+set -o nounset
 
 pip install sentry[postgres] sentry-top
 
