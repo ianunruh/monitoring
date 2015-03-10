@@ -31,6 +31,7 @@ pip install -r requirements.txt
 
 cp $BASE_PATH/etc/init/skyline* /etc/init
 cp $BASE_PATH/opt/skyline/src/settings.py /opt/skyline/src
+chmod +r /opt/skyline/src/settings.py
 
 service skyline-horizon start
 service skyline-analyzer start

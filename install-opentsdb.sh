@@ -26,7 +26,7 @@ cd opentsdb
 
 ./build.sh debian
 
-dpkg -i build/opentsdb-2.1.0/opentsdb-2.1.0_all.deb
+dpkg -i build/opentsdb-2.1.0RC1/opentsdb-2.1.0RC1_all.deb
 
 # Create tables in HBase
 export HBASE_HOME=/opt/hbase

@@ -24,6 +24,8 @@ mv zookeeper-${ZK_VERSION} $ZOOKEEPER_PREFIX
 
 # Configure Zookeeper
 cp $BASE_PATH/opt/zookeeper/conf/* $ZOOKEEPER_PREFIX/conf
+chown vagrant:vagrant $ZOOKEEPER_PREFIX/conf/*
+chmod +r $ZOOKEEPER_PREFIX/conf/*
 
 # Start with supervisord
 cp $BASE_PATH/etc/supervisor/conf.d/zookeeper.conf /etc/supervisor/conf.d

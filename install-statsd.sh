@@ -24,7 +24,8 @@ git clone git://github.com/etsy/statsd.git /usr/share/statsd
 
 mkdir -p /etc/statsd
 
-cp $BASE_PATH/etc/statsd/stats.js /etc/statsd
 cp $BASE_PATH/etc/init/statsd.conf /etc/init
+cp $BASE_PATH/etc/statsd/stats.js /etc/statsd
+chmod +r /etc/statsd/stats.js
 
 start statsd

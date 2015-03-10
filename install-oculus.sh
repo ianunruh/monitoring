@@ -36,6 +36,7 @@ service elasticsearch restart
 
 # Configure Oculus
 cp $BASE_PATH/opt/oculus/config/config.yml /opt/oculus/config
+chmod +r /opt/oculus/config/config.yml
 
 # Install dependencies for Resque workers and Sinatra web app
 cd /opt/oculus

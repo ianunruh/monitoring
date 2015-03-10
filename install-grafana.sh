@@ -22,6 +22,7 @@ tar xf grafana-${GRAFANA_VERSION}.tar.gz
 cp -R grafana-${GRAFANA_VERSION} /usr/share/grafana
 
 cp $BASE_PATH/usr/share/grafana/config.js /usr/share/grafana
+chmod +r /usr/share/grafana/config.js
 
 apt-get install -yq apache2
 
