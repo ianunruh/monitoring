@@ -19,14 +19,14 @@ SENTRY_PATH=/usr/share/sentry
 SENTRY_CONFIG=/etc/sentry/settings.py
 
 apt-get update -q
-apt-get install -yq python-pip python-dev libxml2-dev libxslt1-dev libpq-dev supervisor
+apt-get install -yq python-pip python-dev libxml2-dev libxslt1-dev libpq-dev supervisor libffi-dev
 
 pip install virtualenv
 
 virtualenv $SENTRY_PATH
 source $SENTRY_PATH/bin/activate
 
-pip install sentry[postgres] sentry-top
+pip install psycopg2 sentry[postgres] sentry-top
 
 sudo -i -u postgres psql <<EOF
   CREATE USER sentry WITH PASSWORD 'sekret';
