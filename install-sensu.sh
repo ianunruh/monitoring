@@ -7,8 +7,8 @@
 ##
 set -eux
 
-curl -s http://repos.sensuapp.org/apt/pubkey.gpg | apt-key add -
-echo "deb http://repos.sensuapp.org/apt sensu main" > /etc/apt/sources.list.d/sensu.list
+source env.sh
 
-apt-get update -q
+$BASE_PATH/install-sensu.sh
+
 apt-get install -yq sensu
