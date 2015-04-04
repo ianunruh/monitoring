@@ -7,7 +7,6 @@ Currently, the following stacks can be installed.
 - [Sensu](http://sensuapp.org/) (including [Uchiwa](https://github.com/palourde/uchiwa))
 - [Flapjack](http://flapjack.io/)
 - [Logstash](http://logstash.net/) (with [Elasticsearch](http://www.elasticsearch.org/overview/elasticsearch/)/[Kibana](http://www.elasticsearch.org/overview/kibana/) and [logstash-forwarder](https://github.com/elasticsearch/logstash-forwarder))
-- Etsy's [Kale](http://codeascraft.com/2013/06/11/introducing-kale/) stack ([Skyline](https://github.com/etsy/skyline) for anomaly detection, [Oculus](https://github.com/etsy/oculus) for correlation)
 - [Heka](https://hekad.readthedocs.org/en/latest/)
 - [Sentry](http://sentry.readthedocs.org/en/latest/)
 - [Graylog2](http://graylog2.org/) (including standard and [streaming](https://github.com/Graylog2/graylog2-stream-dashboard) dashboards)
@@ -50,14 +49,12 @@ Two Vagrant boxes are provided with this script.
 
 The `monitoring` box is intended for the different monitoring stacks, while `app1` is intended to try out clients.
 
-### Sensu/Logstash/Skyline
+### Sensu/Logstash
 
 The `monitoring` box provides the following:
 
 - [Kibana](http://192.168.12.10/kibana)
 - [Grafana](http://192.168.12.10/grafana)
-- [Skyline](http://192.168.12.10:1500) (best viewed in Chrome)
-- [Oculus](http://192.168.12.10:3000)
 - [Flapjack](http://192.168.12.10:3080)
 - [Uchiwa](http://192.168.12.10:8010)
 - [ElasticHQ](http://192.168.12.10:9200/_plugin/HQ)

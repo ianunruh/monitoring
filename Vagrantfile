@@ -19,7 +19,7 @@ Vagrant.configure VAGRANTFILE_API_VERSION do |config|
       v.customize ["modifyvm", :id, "--memory", "2048"]
     end
 
-    box.vm.provision :shell, inline: "cd /vagrant && ./install-all-server-with-kale.sh"
+    box.vm.provision :shell, inline: "cd /vagrant && ./install-all-server.sh"
   end
 
   config.vm.define "app1" do |box|
