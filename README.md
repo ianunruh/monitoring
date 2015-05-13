@@ -54,7 +54,7 @@ The `monitoring` box is intended for the different monitoring stacks, while `app
 The `monitoring` box provides the following:
 
 - [Kibana](http://192.168.12.10:5601)
-- [Grafana](http://192.168.12.10/grafana)
+- [Grafana](http://192.168.12.10:3000)
 - [Flapjack](http://192.168.12.10:3080)
 - [Uchiwa](http://192.168.12.10:8010)
 - [ElasticHQ](http://192.168.12.10:9200/_plugin/HQ)
@@ -85,7 +85,7 @@ cd /vagrant && ./install-all-opentsdb.sh
 
 This script also installs Grafana with the OpenTSDB backend configured. Elasticsearch is installed as a dashboard store for Grafana.
 
-- [Grafana](http://192.168.12.10/grafana)
+- [Grafana](http://192.168.12.10:3000)
 - [OpenTSDB dashboard](http://192.168.12.10:4242/)
 
 TCollector is installed on the monitoring host to provide some sample metrics. Note that this script can take more than 10 minutes to install, depending on your bandwidth.
@@ -173,7 +173,7 @@ cd /vagrant && ./install-all-influxdb.sh
 
 This package provides the following:
 
-- [Grafana](http://192.168.12.10/grafana) configured for InfluxDB
+- [Grafana](http://192.168.12.10:3000) configured for InfluxDB
 - [InfluxDB admin interface](http://192.168.12.10:8083/) with default credentials
 - [Uchiwa](http://192.168.12.10:8010) dashboard for Sensu
 

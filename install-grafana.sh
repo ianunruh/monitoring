@@ -1,29 +1,23 @@
 #!/bin/bash
 ##
-# Installs Grafana, an alternate Graphite dashboard
+# Installs Grafana, a rich metrics dashboard and graph editor for Graphite,
+# InfluxDB and OpenTSDB
 #
-# Uses Apache to provide Grafana at `http://localhost/grafana`
+# Configured with the username `admin` and the password `admin`.
 #
 # Provides:
-# - HTTP (TCP/80)
-#
-# Dependencies:
-# - Elasticsearch (any version)
-# - Graphite web
+# - HTTP (TCP/3000)
 ##
 set -eux
 
 source env.sh
 
-cd /tmp
+curl -s https://packagecloud.io/gpg.key | apt-key add -
+echo "deb https://packagecloud.io/grafana/stable/debian wheezy main" > /etc/apt/sources.list.d/grafana.list
 
-curl -sOL http://grafanarel.s3.amazonaws.com/grafana-${GRAFANA_VERSION}.tar.gz
-tar xf grafana-${GRAFANA_VERSION}.tar.gz
-cp -R grafana-${GRAFANA_VERSION} /usr/share/grafana
+apt-get update -q
+apt-get install -yq grafana
 
-cp $BASE_PATH/usr/share/grafana/config.js /usr/share/grafana
+update-rc.d grafana-server defaults 95 10
 
-apt-get install -yq apache2
-
-cp $BASE_PATH/etc/apache2/sites-enabled/grafana.conf /etc/apache2/sites-enabled
-service apache2 restart
+service grafana-server start
