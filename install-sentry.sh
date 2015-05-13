@@ -19,12 +19,17 @@ SENTRY_PATH=/usr/share/sentry
 SENTRY_CONFIG=/etc/sentry/settings.py
 
 apt-get update -q
-apt-get install -yq python-pip python-dev libxml2-dev libxslt1-dev libpq-dev supervisor
+apt-get install -yq python-pip python-dev libffi-dev libxml2-dev libxslt1-dev libpq-dev supervisor
 
 pip install virtualenv
 
 virtualenv $SENTRY_PATH
+
+set +eux
+
 source $SENTRY_PATH/bin/activate
+
+set -eux
 
 pip install sentry[postgres] sentry-top
 
@@ -41,8 +46,6 @@ cp $BASE_PATH/etc/sentry/settings.py /etc/sentry
 sentry --config=$SENTRY_CONFIG upgrade --noinput
 
 cp $BASE_PATH/etc/supervisor/conf.d/sentry.conf /etc/supervisor/conf.d
-
-supervisorctl reload
-supervisorctl status
-
 cp $BASE_PATH/usr/local/bin/sentry-top /usr/local/bin
+
+supervisorctl update
