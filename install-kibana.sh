@@ -17,7 +17,7 @@ mkdir -p /etc/kibana /opt/kibana
 cd /tmp
 
 curl -sOL https://download.elastic.co/kibana/kibana/kibana-${KIBANA_VERSION}-linux-x64.tar.gz
-tar xvf kibana-${KIBANA_VERSION}-linux-x64.tar.gz -C /opt/kibana --strip-components=1
+tar xf kibana-${KIBANA_VERSION}-linux-x64.tar.gz -C /opt/kibana --strip-components=1
 
 cp $BASE_PATH/etc/kibana/kibana.yml /etc/kibana
 cp $BASE_PATH/etc/init/kibana.conf /etc/init
