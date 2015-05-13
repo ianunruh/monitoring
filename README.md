@@ -6,7 +6,7 @@ Currently, the following stacks can be installed.
 
 - [Sensu](http://sensuapp.org/) (including [Uchiwa](https://github.com/palourde/uchiwa))
 - [Flapjack](http://flapjack.io/)
-- [Logstash](http://logstash.net/) (with [Elasticsearch](http://www.elasticsearch.org/overview/elasticsearch/)/[Kibana](http://www.elasticsearch.org/overview/kibana/) and [logstash-forwarder](https://github.com/elasticsearch/logstash-forwarder))
+- [Logstash](http://logstash.net/) (with [Elasticsearch](https://www.elastic.co/products/elasticsearch)/[Kibana](https://www.elastic.co/products/kibana) and [logstash-forwarder](https://github.com/elastic/logstash-forwarder))
 - [Heka](https://hekad.readthedocs.org/en/latest/)
 - [Sentry](http://sentry.readthedocs.org/en/latest/)
 - [Graylog](http://graylog.org/)
@@ -53,7 +53,7 @@ The `monitoring` box is intended for the different monitoring stacks, while `app
 
 The `monitoring` box provides the following:
 
-- [Kibana](http://192.168.12.10/kibana)
+- [Kibana](http://192.168.12.10:5601)
 - [Grafana](http://192.168.12.10/grafana)
 - [Flapjack](http://192.168.12.10:3080)
 - [Uchiwa](http://192.168.12.10:8010)
@@ -153,7 +153,7 @@ cd /vagrant && ./install-all-heka.sh
 This package provides the following:
 
 - [Heka dashboard](http://192.168.12.10:4352/)
-- [Kibana](http://192.168.12.10/kibana/)
+- [Kibana](http://192.168.12.10:5601)
 - [ElasticHQ](http://192.168.12.10:9200/_plugin/HQ/)
 - Heka Protobuf input on `192.168.12.10` at TCP port 5565
 
@@ -195,7 +195,7 @@ cd /vagrant && ./install-all-flume.sh
 
 This package provides the following:
 
-- [Kibana](http://192.168.12.10/kibana/)
+- [Kibana](http://192.168.12.10:5601)
 - [ElasticHQ](http://192.168.12.10:9200/_plugin/HQ/)
 - Avro input on `192.168.12.10` at TCP port 41414
 - Syslog input on `192.168.12.10` at TCP port 1514
@@ -218,7 +218,7 @@ cd /vagrant && ./install-all-fluentd.sh
 
 This package provides the following:
 
-- [Kibana](http://192.168.12.10/kibana/)
+- [Kibana](http://192.168.12.10:5601)
 - [ElasticHQ](http://192.168.12.10:9200/_plugin/HQ/)
 - HTTP input on `192.168.12.10` at TCP port 9880
 - Syslog input on `192.168.12.10` at TCP port 1514

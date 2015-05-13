@@ -1,11 +1,9 @@
 #!/bin/bash
 ##
-# Installs Kibana, a dashboard for Elasticsearch and Logstash
-#
-# Uses Apache to provide Grafana at `http://localhost/kibana`
+# Installs Kibana 4, a dashboard for Elasticsearch and Logstash
 #
 # Provides:
-# - HTTP (TCP/80)
+# - HTTP (TCP/5601)
 #
 # Dependencies:
 # - Elasticsearch (any version)
@@ -14,15 +12,14 @@ set -eux
 
 source env.sh
 
+mkdir -p /etc/kibana /opt/kibana
+
 cd /tmp
 
-curl -sOL https://download.elasticsearch.org/kibana/kibana/kibana-${KIBANA_VERSION}.tar.gz
-tar xf kibana-${KIBANA_VERSION}.tar.gz
-cp -R kibana-${KIBANA_VERSION} /usr/share/kibana
+curl -sOL https://download.elastic.co/kibana/kibana/kibana-${KIBANA_VERSION}-linux-x64.tar.gz
+tar xvf kibana-${KIBANA_VERSION}-linux-x64.tar.gz -C /opt/kibana --strip-components=1
 
-cp $BASE_PATH/usr/share/kibana/config.js /usr/share/kibana
+cp $BASE_PATH/etc/kibana/kibana.yml /etc/kibana
+cp $BASE_PATH/etc/init/kibana.conf /etc/init
 
-apt-get install -yq apache2
-
-cp $BASE_PATH/etc/apache2/sites-enabled/kibana.conf /etc/apache2/sites-enabled
-service apache2 restart
+start kibana
