@@ -14,6 +14,7 @@ Optional Variables:
   host:             address to listen on over UDP [default: 0.0.0.0]
   checkInterval:    health status check interval [default: 10000]
   cacheSize:        size of the cache to store for hashring key lookups [default: 10000]
+  forkCount:        number of child processes (cluster module), number or 'auto' for utilize all cpus [default:0]
 
 */
 {
