@@ -14,19 +14,13 @@ set -eux
 source env.sh
 
 # Install dependencies
-apt-get install -yq git openjdk-7-jdk autoconf
+apt-get install -yq openjdk-7-jre-headless
 
 # Install OpenTSDB
 cd /tmp
 
-# TODO Replace this with package download after release 2.1.0
-# Have to use next branch for Grafana compat
-git clone git://github.com/OpenTSDB/opentsdb.git -b next
-cd opentsdb
-
-./build.sh debian
-
-dpkg -i build/opentsdb-2.1.0/opentsdb-2.1.0_all.deb
+curl -sOL https://github.com/OpenTSDB/opentsdb/releases/download/v${OPENTSDB_VERSION}/opentsdb-${OPENTSDB_VERSION}_all.deb
+dpkg -i opentsdb-${OPENTSDB_VERSION}_all.deb
 
 # Create tables in HBase
 export HBASE_HOME=/opt/hbase
