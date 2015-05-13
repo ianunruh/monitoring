@@ -1,6 +1,6 @@
 #!/bin/bash
 ##
-# Installs the Graylog2 stack
+# Installs the Graylog stack
 ##
 set -eux
 

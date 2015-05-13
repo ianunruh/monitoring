@@ -9,7 +9,7 @@ Currently, the following stacks can be installed.
 - [Logstash](http://logstash.net/) (with [Elasticsearch](http://www.elasticsearch.org/overview/elasticsearch/)/[Kibana](http://www.elasticsearch.org/overview/kibana/) and [logstash-forwarder](https://github.com/elasticsearch/logstash-forwarder))
 - [Heka](https://hekad.readthedocs.org/en/latest/)
 - [Sentry](http://sentry.readthedocs.org/en/latest/)
-- [Graylog2](http://graylog2.org/) (including standard and [streaming](https://github.com/Graylog2/graylog2-stream-dashboard) dashboards)
+- [Graylog](http://graylog.org/)
 - [Statsd](https://github.com/etsy/statsd/)
 - [Graphite](https://graphite.readthedocs.org/en/latest/) (with [Grafana](http://grafana.org/))
 - [InfluxDB](http://influxdb.com/)
@@ -120,9 +120,9 @@ cd /vagrant && ./install-all-sentry.sh
 
 After installation, the [Sentry web interface](http://192.168.12.10:9000) should be available. Login with the username `admin` and the password `secret`.
 
-### Graylog2
+### Graylog
 
-To install Graylog2 with the web interface and stream dashboard, simply use the following.
+To install Graylog with the web interface, simply use the following.
 
 ```sh
 vagrant up --no-provision monitoring
@@ -131,15 +131,10 @@ vagrant ssh monitoring
 
 ```sh
 sudo -i
-cd /vagrant && ./install-all-graylog2.sh
+cd /vagrant && ./install-all-graylog.sh
 ```
 
-After installation, you can access one of the following resources. Use the username `admin` and the passwod `password`.
-
-- [Web interface](http://192.168.12.10:8400/)
-- [Streaming dashboard](http://192.168.12.10/graylog2-streaming-dashboard)
-
-Note that Graylog2 requires its own Elasticsearch cluster, so **do not** use this script on the same node as other installation scripts.
+After installation, you can access one the [web interface](http://192.168.12.10:8940/). Use the username `admin` and the password `password`.
 
 ### Heka
 
