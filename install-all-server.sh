@@ -8,7 +8,6 @@ source env.sh
 
 $BASE_PATH/clean.sh
 $BASE_PATH/generate-lumberjack-ssl.sh
-$BASE_PATH/generate-sensu-ssl.sh
 
 $BASE_PATH/install-elasticsearch.sh
 $BASE_PATH/install-elasticsearch-curator.sh

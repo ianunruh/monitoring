@@ -9,6 +9,6 @@ set -eux
 
 source env.sh
 
-$BASE_PATH/install-sensu.sh
+$BASE_PATH/configure-repo-sensu.sh
 
 apt-get install -yq sensu
