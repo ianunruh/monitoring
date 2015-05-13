@@ -1,6 +1,6 @@
 #!/bin/bash
 ##
-# Installs Elasticsearch 1.0.x
+# Installs Elasticsearch 1.4
 #
 # Provides:
 # - HTTP REST API (TCP/9200)
