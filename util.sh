@@ -4,6 +4,8 @@ function with_retry {
   local max_attempts=5
   local timeout=3
 
+  set +e
+
   while [[ $attempts < $max_attempts ]]; do
     "$@"
 
@@ -14,4 +16,6 @@ function with_retry {
     sleep $timeout
     attempts=$((attempts + 1))
   done
+
+  set -e
 }

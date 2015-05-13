@@ -22,8 +22,4 @@ service influxdb start
 source $BASE_PATH/util.sh
 
 # Create stats database
-
-# -e option prevents with_retry from actually retrying when curl returns non-zero status
-set +e
-with_retry curl -X POST "http://localhost:8086/db?u=root&p=root" -d "{\"name\": \"stats\"}"
-set -e
+with_retry curl -X POST 'http://localhost:8086/db?u=root&p=root' -d '{"name": "stats"}'
