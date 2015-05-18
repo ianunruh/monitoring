@@ -15,9 +15,9 @@ cd /tmp
 
 apt-get install -yq git golang
 
-git clone git://github.com/elasticsearch/logstash-forwarder.git
+git clone git://github.com/elastic/logstash-forwarder.git
 cd logstash-forwarder
-go build
+go build -o logstash-forwarder
 
 cp logstash-forwarder /usr/bin
 
