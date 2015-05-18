@@ -20,6 +20,7 @@ $BASE_PATH/install-memcached.sh
 $BASE_PATH/install-graphite-carbon.sh
 $BASE_PATH/install-graphite-web.sh
 $BASE_PATH/install-grafana.sh
+$BASE_PATH/install-tessera.sh
 
 $BASE_PATH/configure-rabbitmq-sensu.sh
 $BASE_PATH/install-sensu.sh

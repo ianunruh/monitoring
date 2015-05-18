@@ -9,6 +9,7 @@ Currently, the following stacks can be installed.
 - [Logstash](http://logstash.net/) (with [Elasticsearch](https://www.elastic.co/products/elasticsearch)/[Kibana](https://www.elastic.co/products/kibana) and [logstash-forwarder](https://github.com/elastic/logstash-forwarder))
 - [Heka](https://hekad.readthedocs.org/en/latest/)
 - [Sentry](http://sentry.readthedocs.org/en/latest/)
+- [Tessera](http://urbanairship.github.io/tessera/)
 - [Graylog](http://graylog.org/)
 - [Statsd](https://github.com/etsy/statsd/)
 - [Graphite](https://graphite.readthedocs.org/en/latest/) (with [Grafana](http://grafana.org/))
@@ -54,6 +55,7 @@ The `monitoring` box is intended for the different monitoring stacks, while `app
 The `monitoring` box provides the following:
 
 - [Kibana](http://192.168.12.10:5601)
+- [Tessera](http://192.168.12.10:5000)
 - [Grafana](http://192.168.12.10:3000)
 - [Flapjack](http://192.168.12.10:3080)
 - [Uchiwa](http://192.168.12.10:8010)
