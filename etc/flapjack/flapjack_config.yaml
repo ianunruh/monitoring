@@ -24,7 +24,7 @@ production:
     # This is useful is cases where your monitoring starts checking something
     # before it is completely provisioned
     # Value parsed by https://github.com/hpoydar/chronic_duration
-    # You can disable this setting by specifying 0 seconds.
+    # You can disable this setting by specifying "0 seconds".
     new_check_scheduled_maintenance_duration: 100 years
     new_check_scheduled_maintenance_ignore_tags:
       - bypass_ncsm
@@ -39,6 +39,7 @@ production:
     queue: notifications
     email_queue: email_notifications
     sms_queue: sms_notifications
+    sms_nexmo_queue: sms_nexmo_notifications
     sms_twilio_queue: sms_twilio_notifications
     sns_queue: sns_notifications
     jabber_queue: jabber_notifications
@@ -116,6 +117,20 @@ production:
       #templates:
       #  rollup.text: '/etc/flapjack/templates/sms_twilio/rollup.text.erb'
       #  alert.text: '/etc/flapjack/templates/sms_twilio/alert.text.erb'
+    # Sends SMS notifications via Nexmo
+    sms_nexmo:
+      enabled: no
+      queue: sms_nexmo_notifications
+      from: "xxxxxxxxx"
+      api_key: "APIKEY"
+      secret: "s3cr3t"
+      logger:
+        level: INFO
+        syslog_errors: yes
+      # location of custom alert templates
+      #templates:
+      #  rollup.text: '/etc/flapjack/templates/sms/rollup.text.erb'
+      #  alert.text: '/etc/flapjack/templates/sms/alert.text.erb'
     # Generates SNS notifications
     sns:
       enabled: no
@@ -164,20 +179,26 @@ production:
     # Browsable web interface
     web:
       enabled: yes
+      bind_address: 0.0.0.0
       port: 3080
       timeout: 300
       # Seconds between auto_refresh of entities/checks pages.  Set to 0 to disable
       auto_refresh: 120
       access_log: "/var/log/flapjack/web_access.log"
+      # Main URL for this service eg: "http://flapjack.example/"
+      #base_url: "/"
+      # URL for accessing the JSONAPI service from the browser
       api_url: "http://192.168.12.10:3081/"
       # Full path to location of logo file, e.g. /etc/flapjack/custom_logo.png
       #logo_image_path: "/etc/flapjack/web/custom_logo/flapjack-2013-notext-transparent-300-300.png"
+      show_exceptions: false
       logger:
         level: INFO
         syslog_errors: yes
     # HTTP API server
     jsonapi:
       enabled: yes
+      bind_address: 0.0.0.0
       port: 3081
       timeout: 300
       access_log: "/var/log/flapjack/jsonapi_access.log"
@@ -236,7 +257,7 @@ development:
     # This is useful is cases where your monitoring starts checking something
     # before it is completely provisioned
     # Value parsed by https://github.com/hpoydar/chronic_duration
-    # You can disable this setting by specifying 0 seconds.
+    # You can disable this setting by specifying "0 seconds".
     new_check_scheduled_maintenance_duration: 100 years
     new_check_scheduled_maintenance_ignore_tags:
       - bypass_ncsm
@@ -251,6 +272,7 @@ development:
     queue: notifications
     email_queue: email_notifications
     sms_queue: sms_notifications
+    sms_nexmo_queue: sms_nexmo_notifications
     sms_twilio_queue: sms_twilio_notifications
     jabber_queue: jabber_notifications
     pagerduty_queue: pagerduty_notifications
@@ -327,7 +349,20 @@ development:
       #templates:
       #  rollup.text: '/etc/flapjack/templates/sms_twilio/rollup.text.erb'
       #  alert.text: '/etc/flapjack/templates/sms_twilio/alert.text.erb'
-    # Generates SNS notifications
+    # Sends SMS notifications via Nexmo
+    sms_nexmo:
+      enabled: no
+      queue: sms_nexmo_notifications
+      from: "xxxxxxxxx"
+      api_key: "APIKEY"
+      secret: "s3cr3t"
+      logger:
+        level: INFO
+        syslog_errors: yes
+      # location of custom alert templates
+      #templates:
+      #  rollup.text: '/etc/flapjack/templates/sms/rollup.text.erb'
+      #  alert.text: '/etc/flapjack/templates/sms/alert.text.erb'
     # Connects to an XMPP (jabber) server, sends notifications (to rooms and individuals),
     # handles acknowledgements from jabber users and other commands.
     jabber:
@@ -368,6 +403,7 @@ development:
     # Browsable web interface
     web:
       enabled: yes
+      bind_address: 0.0.0.0
       port: 3080
       timeout: 300
       # Seconds between auto_refresh of entities/checks pages.  Set to 0 to disable
@@ -376,12 +412,14 @@ development:
       api_url: "http://192.168.12.10:3081/"
       # Full path to location of logo file, e.g. /etc/flapjack/custom_logo.png
       #logo_image_path: "/etc/flapjack/web/custom_logo/flapjack-2013-notext-transparent-300-300.png"
+      show_exceptions: true
       logger:
         level: DEBUG
         syslog_errors: yes
     # HTTP API server
     jsonapi:
       enabled: yes
+      bind_address: 0.0.0.0
       port: 3081
       timeout: 300
       access_log: "log/jsonapi_access.log"
