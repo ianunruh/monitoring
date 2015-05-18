@@ -17,6 +17,7 @@ Currently, the following stacks can be installed.
 - [Flume](http://flume.apache.org/)
 - [Fluentd](http://fluentd.org/)
 - [OpenTSDB](http://opentsdb.net/) and [TCollector](http://opentsdb.net/docs/build/html/user_guide/utilities/tcollector.html)
+- [Cachet](https://cachethq.io/)
 
 This repository started off from the ideas on my [Monitoring Everything](http://ianunruh.com/2014/05/monitor-everything.html) blog series.
 
@@ -60,6 +61,7 @@ The `monitoring` box provides the following:
 - [Flapjack](http://192.168.12.10:3080)
 - [Uchiwa](http://192.168.12.10:8010)
 - [ElasticHQ](http://192.168.12.10:9200/_plugin/HQ)
+- [Cachet](http://192.168.12.10:4477)
 
 For client nodes, it provides:
 

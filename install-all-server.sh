@@ -38,3 +38,6 @@ $BASE_PATH/configure-logstash-indexer.sh
 $BASE_PATH/install-kibana.sh
 
 $BASE_PATH/install-statsd.sh
+
+$BASE_PATH/install-mysql.sh
+$BASE_PATH/install-cachet.sh
