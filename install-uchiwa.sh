@@ -18,4 +18,6 @@ apt-get install -yq uchiwa
 
 cp $BASE_PATH/etc/sensu/uchiwa.json /etc/sensu
 
+update-rc.d uchiwa defaults
+
 service uchiwa restart
