@@ -1,0 +1,17 @@
+[req]
+distinguished_name = req_distinguished_name
+x509_extensions = v3_req
+prompt = no
+
+[req_distinguished_name]
+CN = monitoring
+
+[v3_req]
+keyUsage = dataEncipherment, keyEncipherment, keyCertSign, digitalSignature
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+basicConstraints = CA:TRUE
+
+[alt_names]
+DNS.1 = monitoring
+IP.1 = 192.168.12.10

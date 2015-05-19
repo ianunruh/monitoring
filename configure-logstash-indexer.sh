@@ -21,8 +21,8 @@ cp $BASE_PATH/etc/logstash/conf.d/10-input-redis.conf /etc/logstash/conf.d
 cp $BASE_PATH/etc/logstash/conf.d/50-filter-* /etc/logstash/conf.d
 cp $BASE_PATH/etc/logstash/conf.d/90-output-elasticsearch.conf /etc/logstash/conf.d
 
-cp $BUILD_PATH/forwarder.crt $BUILD_PATH/forwarder.key /etc/logstash
-chown logstash:logstash /etc/logstash/forwarder.key
-chmod 640 /etc/logstash/forwarder.key
+cp $BUILD_PATH/{server-cert,server-key}.pem /etc/logstash
+chown logstash:logstash /etc/logstash/server-key.pem
+chmod 640 /etc/logstash/server-key.pem
 
 service logstash restart

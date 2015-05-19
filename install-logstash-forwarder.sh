@@ -26,7 +26,7 @@ mkdir -p /etc/logstash-forwarder
 cp $BASE_PATH/etc/init/logstash-forwarder.conf /etc/init
 cp $BASE_PATH/etc/logstash-forwarder/config.json /etc/logstash-forwarder
 
-cp $BUILD_PATH/forwarder.crt $BUILD_PATH/forwarder.key /etc/logstash-forwarder
-chmod 640 /etc/logstash-forwarder/forwarder.key
+cp $BUILD_PATH/{server-cert,client-cert,client-key}.pem /etc/logstash-forwarder
+chmod 640 /etc/logstash-forwarder/client-key.pem
 
 service logstash-forwarder start

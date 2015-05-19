@@ -4,9 +4,9 @@
       "192.168.12.10:5043"
     ],
 
-    "ssl ca": "/etc/logstash-forwarder/forwarder.crt",
-    "ssl certificate": "/etc/logstash-forwarder/forwarder.crt",
-    "ssl key": "/etc/logstash-forwarder/forwarder.key",
+    "ssl ca": "/etc/logstash-forwarder/server-cert.pem",
+    "ssl certificate": "/etc/logstash-forwarder/client-cert.pem",
+    "ssl key": "/etc/logstash-forwarder/client-key.pem",
 
     "timeout": 15
   },
